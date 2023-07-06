@@ -1,21 +1,24 @@
 class directory:
-    def __init__(self,data):
-        self.data=data
+    def __init__(self,name):
+        self.name=name
         self.parent=None
         self.next_sibiling=None
         self.prev_sibiling=None
         self.first_child=None
-    def add_dir(self,dir):
-        dir.parent=self
+        self.children=[]
+    def add_dir(self,_dir):
+        self.children.append(_dir)
+        _dir.parent=self
         if self.first_child is None:
-            self.first_child=dir
+            self.first_child=_dir
         else:
             current_child=self.first_child
             while current_child.next_sibiling is not None:
                 current_child=current_child.next_sibiling
-            current_child.next_sibiling=dir
-            dir.prev_sibiling=current_child
+            current_child.next_sibiling=_dir
+            _dir.prev_sibiling=current_child
     def add_file(self,file):
+        self.children.append(file)
         file.parent=self
         if self.first_child is None:
             self.first_child=file
@@ -27,19 +30,18 @@ class directory:
             file.prev_sibiling=current_child
     
     def display(self,indent=0):
-        print('  '* indent +self.data + '/')
         current_child=self.first_child
-        while current_child is None:
-            if isinstance(current_child,dir):
-                current_child.display(indent+4)
+        print(" " * indent + self.name +'/')
+        for child in self.children:
+            if isinstance(child,directory):
+                child.display(indent+5)
             else:
-                print(" " * (indent+4)+ current_child)
-                current_child=current_child.next_sibiling
-    
+                print(" " *(indent+5) + child.name + '/')
+                
     
 class File:
-     def __init__(self,data):
-            self.data=data
+     def __init__(self,name):
+            self.name=name
             self.parent=None
             self.next_sibiling=None
             self.prev_sibiling=None
@@ -49,41 +51,69 @@ class File:
 
 
 
+#DESCRIPTION
+            """ THE directory tree structure is implemented using n-ary tree and doubly linked list.
+Each node is linked to its parent, previous sibiling and next sibiling.
+A node can be a file or directory. if it is directory it will have children linked to one another.
+
+"""
 
 
 
-#TEST CASES AND 
-#create the root directory
-root=directory('ROOT')
-#creating the sub_dir 
-desktop=directory('DESKTOP')
-video=directory('VIDEOS')
-picture=directory('PICTURES')
-#relating the directories : making the root the parent of all directory
+
+
+
+#test cases
+#creating directories having attributes like add_dir, add_file,display,parent,first_child
+            
+root=directory("ROOT")
+desktop=directory("DESKTOP")
+video=directory("VIDEOS")
+document=directory("DOCUMENTS")
+picture=directory("PICTURE")
+music=directory("COOL-MUSICS")
+favorite=directory("FAVIOURITE MUSIC")
+
+dsa_doc=directory("DSA_DOCUMENTS_COLLECTION")
+database=directory("DATABASE RESOURCES")
+memory=directory("BEAUTIFUL MEMORIES")
+romance=directory("Romantic life")
+spritual=directory("SPRITUAL BOOK COLLECTION")
+waltz=directory("WALTZ MUSIC COLLECTION")
+
+
+#linking the directories with the main or root directory and with each other
+
 root.add_dir(desktop)
-root.first_child(desktop)
+root.add_dir(video)
+root.add_dir(document)
 root.add_dir(picture)
-root.add_dir(video)  
-#creating files for the purpose of illustration
-f1=File('video1.mp4')    
-f2=File('video2.mp4')   
-f3=File('video3.mp4')
-f4=File('Ayda.mp3')
-f5=File('bereket.mp3')
-f6=File('the power of now.pdf')
-f7=File('Ego is the your enemy .pdf')
+root.add_dir(music)
 
 
-#Add files to root
-root.add_file(f1)
-root.add_file(f2)
-#add files to the sub directories 
-desktop.add_file(f3)
-desktop.add_file(f4)
+# adding directroies to the sub directories of the root
+document.add_dir(dsa_doc)
+document.add_dir(database)
+picture.add_dir(memory)
+video.add_dir(romance)
+document.add_dir(spritual)
+music.add_dir(waltz)
 
-memories=directory("MEMORIES")
-picture.add_dir(memories)
-picture.add_file(f5)
+#creating files
+music1=File("AYDA_ABREHAM.mp3")
+pic1=File("hiking.jpg")
+video1=File("java full course.mp4")
+doc1=File("Data structure and algorithm book.pdf")
+doc2=File("Introduction to ethical hacking.pdf")
+
+
+# adding the files to directories
+desktop.add_file(music1)
+document.add_file(doc2)
+dsa_doc.add_file(doc1)
+video.add_file(video1)
+picture.add_file(pic1)
+
 
 
 print(root.display())
