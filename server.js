@@ -1,6 +1,5 @@
 const express = require('express');
-// const http = require('http');
-// const connectDB = require('/projects/Tutor_Linkup/backend/config/db.js');
+const http = require('http');
 const connectDB = require('./Tutor_Linkup/backend/config/db.js');
 
 const app = express();
