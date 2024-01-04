@@ -2,7 +2,6 @@ const posts = require("../models/posts.js");
 const express = require('express');
 const router = express.Router();
 
-const {} = require('');
 const { displayCreatePostPage, createPost, displayPosts, displaySinglePost } = require("../controllers/postsController.js");
 
 // base route /posts

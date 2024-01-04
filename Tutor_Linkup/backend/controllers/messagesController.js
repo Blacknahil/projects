@@ -1,16 +1,29 @@
-const user = require("../models/user.js");
+const messages = require("../models/messages.js");
 const asyncHandler = require("express-async-handler");
 const express = require("express");
 
-const editProfile = ((req, res) => {
-    res.send('implement this function where users edit their own profile')
+const sendMessage = ((req, res) => {
+    res.send('implement this function')
 })
 
-const viewProfile = ((req, res) => {
-    res.send('implement this function where the user views other users profile')
+const getGroupMessage = ((req, res) => {
+    res.send('implement this function')
 })
+
+const getPrivateMessage = ((req, res) => {
+    res.send('implement this function')
+})
+
+// const getGroupMessagesList = ((req, res) => {
+//     res.send('implement this functio')
+// })
+
+// const getPrivateMessagesList = ((req, res) => {
+//     res.send('implement this functio')
+// })
 
 module.exports = {
-    editProfile,
-    viewProfile
+    sendMessage,
+    getGroupMessage,
+    getPrivateMessage,
 }

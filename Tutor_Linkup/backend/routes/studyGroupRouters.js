@@ -6,9 +6,9 @@ const { getGroup, addGroupMember, createGroup, deleteGroup } = require("../contr
 
 // base route /group
 
-router.get('/:id', getGroup);
-router.put('/:id', addGroupMember);
-router.post('/', createGroup);
-router.delete('/:id', deleteGroup);
+router.get('/get/:id', getGroup);
+router.put('/add/:id', addGroupMember);
+router.post('/create', createGroup);
+router.delete('/delete/:id', deleteGroup);
 
 module.exports = router;

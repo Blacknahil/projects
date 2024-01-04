@@ -4,10 +4,10 @@ const router = express.Router();
 
 const { rateUser, commentOnUser, displayReviewPage } = require("../controllers/reviewController.js");
 
-// base route /user/:id/review
+// base route /review
 
-router.post('/', rateUser);
-router.post('/', commentOnUser);
-router.get('/', displayReviewPage)
+router.post('/rate', rateUser);
+router.post('/comment', commentOnUser);
+router.get('/reviewPage', displayReviewPage)
 
 module.exports = router;

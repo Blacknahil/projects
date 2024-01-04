@@ -2,15 +2,30 @@ const user = require("../models/user.js");
 const asyncHandler = require("express-async-handler");
 const express = require("express");
 
-const editProfile = ((req, res) => {
+const signUp = ((req, res) => {
     res.send('implement this function where users edit their own profile')
 })
 
-const viewProfile = ((req, res) => {
+const login = ((req, res) => {
+    res.send('implement this function where the user views other users profile')
+})
+
+const changePassword = ((req, res) => {
+    res.send('implement this function where the user views other users profile')
+})
+
+const resetPassword = ((req, res) => {
+    res.send('implement this function where the user views other users profile')
+})
+
+const forgotPassword = ((req, res) => {
     res.send('implement this function where the user views other users profile')
 })
 
 module.exports = {
-    editProfile,
-    viewProfile
+    signUp,
+    login,
+    changePassword,
+    resetPassword,
+    forgotPassword
 }
