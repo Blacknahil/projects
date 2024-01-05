@@ -46,5 +46,34 @@
     <footer>
       <!-- Your Footer Content -->
     </footer>
+    <script src="/socket.io/socket.io.js"></script>
+    <script>
+      const socket = io();
+
+      function joinRoom(roomId) {
+        socket.emit("joinRoom", { roomId });
+      }
+
+      function leaveRoom(roomId) {
+        socket.emit("leaveRoom", { roomId });
+      }
+
+      function sendRoomMessage(roomId, message) {
+        socket.emit("roomMessage", { roomId, message });
+      }
+
+      function sendDirectMessage(receiverId, message) {
+        const senderId = getSenderId();
+        socket.emit("directMessage", { senderId, receiverId, message });
+      }
+
+      socket.on("newMessage", (message) => {
+        console.log("New message in room:", message);
+      });
+
+      socket.on("newDirectMessage", (message) => {
+        console.log("New direct message:", message);
+      });
+    </script>
   </body>
 </html>
