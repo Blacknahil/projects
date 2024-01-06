@@ -1,25 +1,28 @@
-const mongoose = require("mongoose");
-
+const mongoose = require('mongoose');
 const Schema = mongoose.Schema;
 
 const reviewSchema = new Schema({
     rating: {
-        type: Number, 
+        type: Number,
+        required: true,
+        min: 1,
+        max: 5
+    },
+    comment: String,
+    reviewedTutor: {
+        type: Schema.Types.ObjectId,
+        ref: 'User',
         required: true
     },
-    comment: {
-        type: String, 
-    
+    author: {
+        type: Schema.Types.ObjectId,
+        ref: 'User',
+        required: true
     },
-    reviewedTutor: {
-        type: Schema.Types.ObjectId, 
-        ref: "tutor",
-        // required: true 
-    },
+    createdAt: {
+        type: Date,
+        default: Date.now
+    }
 });
 
-// reviewSchema.virtual("url").get(function (){
-//     return `/user/review/${this._id}`;
-// });
-
-module.exports = mongoose.model("review", reviewSchema);
+module.exports = mongoose.model('Review', reviewSchema);

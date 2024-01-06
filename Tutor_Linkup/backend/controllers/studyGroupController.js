@@ -1,16 +1,9 @@
-const StudyGroup = require("../models/studyGroup.js");
+const Group = require("../models/group.js");  // Updated to reflect the correct model file name
 const asyncHandler = require("express-async-handler");
-const express = require("express");
-
 
 const createGroup = asyncHandler(async (req, res) => {
     const { userId, content } = req.body;
-
-    const newGroup = new StudyGroup({
-        sender: userId,
-        content,
-    });
-
+    const newGroup = new Group({ sender: userId, content });
     const savedGroup = await newGroup.save();
 
     res.json(savedGroup);
@@ -18,15 +11,13 @@ const createGroup = asyncHandler(async (req, res) => {
 
 const addGroupMember = asyncHandler(async (req, res) => {
     const { groupId, userId } = req.body;
-
-    const group = await StudyGroup.findById(groupId);
+    const group = await Group.findById(groupId);
 
     if (!group) {
         return res.status(404).json({ error: 'Group not found' });
     }
 
     group.members.push(userId);
-
     const updatedGroup = await group.save();
 
     res.json(updatedGroup);
@@ -34,8 +25,7 @@ const addGroupMember = asyncHandler(async (req, res) => {
 
 const deleteGroup = asyncHandler(async (req, res) => {
     const { groupId } = req.params;
-
-    const deletedGroup = await StudyGroup.findByIdAndDelete(groupId);
+    const deletedGroup = await Group.findByIdAndDelete(groupId);
 
     if (!deletedGroup) {
         return res.status(404).json({ error: 'Group not found' });
@@ -46,15 +36,13 @@ const deleteGroup = asyncHandler(async (req, res) => {
 
 const leaveGroup = asyncHandler(async (req, res) => {
     const { groupId, userId } = req.body;
-
-    const group = await StudyGroup.findById(groupId);
+    const group = await Group.findById(groupId);
 
     if (!group) {
         return res.status(404).json({ error: 'Group not found' });
     }
 
     group.members.pull(userId);
-
     const updatedGroup = await group.save();
 
     res.json(updatedGroup);
@@ -65,4 +53,4 @@ module.exports = {
     addGroupMember,
     deleteGroup,
     leaveGroup
-}
+};
