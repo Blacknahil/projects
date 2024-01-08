@@ -10,10 +10,13 @@ const postsRouter = require("./Tutor_Linkup/backend/routes/postsRouters.js")
 const messagesRouter = require("./Tutor_Linkup/backend/routes/messagesRouters.js")
 const conversationRouter = require("./Tutor_Linkup/backend/routes/conversationRouters.js")
 const authRouter = require("./Tutor_Linkup/backend/routes/authRouters.js")
+const bodyParser = require('body-parser');
+
 
 const app = express();
 connectDB();
 
+app.use(bodyParser.json());
 app.use("/user", userRouter);
 app.use("/group", studyGroupRouter);
 app.use("/search", searchRouter);
