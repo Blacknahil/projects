@@ -11,10 +11,28 @@ const messagesRouter = require("./Tutor_Linkup/backend/routes/messagesRouters.js
 const conversationRouter = require("./Tutor_Linkup/backend/routes/conversationRouters.js")
 const authRouter = require("./Tutor_Linkup/backend/routes/authRouters.js")
 const bodyParser = require('body-parser');
+const path = require('path');
+
+
 
 
 const app = express();
 connectDB();
+
+
+
+// Set EJS as the view engine
+app.set('view engine', 'ejs');
+app.set('views', path.join(__dirname, 'Tutor_Linkup', 'backend', 'views'));
+
+// Other middleware and route setup...
+
+// Example route for displaying the create post page
+const { displayPosts } = require('./Tutor_Linkup/backend/controllers/postsController.js');
+const { displaySinglePost } = require('./Tutor_Linkup/backend/controllers/postsController.js');
+
+app.get('/create-post', displayPosts);
+app.get('/single-post/:id', displaySinglePost);
 
 app.use(bodyParser.json());
 app.use("/user", userRouter);

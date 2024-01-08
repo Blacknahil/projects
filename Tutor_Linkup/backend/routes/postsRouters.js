@@ -2,14 +2,14 @@ const posts = require("../models/posts.js");
 const express = require('express');
 const router = express.Router();
 
-const { displayCreatePostPage, createPost, displayPosts, displaySinglePost } = require("../controllers/postsController.js");
+const {  createPost, displayPosts, displaySinglePost } = require("../controllers/postsController.js");
 
 // base route /posts
 
-router.get('/createPost', displayCreatePostPage);
-router.post('/createPost/:id', createPost);
-router.get('/createPost', displayPosts);
-router.get('/createPost/:id', displaySinglePost);
+
+router.post('/newPost', createPost);
+router.get('/create-post', displayPosts);
+router.get('/post/:id', displaySinglePost);
 
 
 module.exports = router;
