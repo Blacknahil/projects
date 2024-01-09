@@ -1,0 +1,79 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Tutor Linkup</title>
+    <!-- Add your CSS links here -->
+  </head>
+  <body>
+    <header>
+      <!-- Your Header Content -->
+    </header>
+    <main>
+      <!-- Main Content -->
+
+      <!-- Registration Section -->
+      <section>
+        <h2>Register</h2>
+        <form action="http://localhost:5000/register" method="POST">
+          <input type="text" name="username" placeholder="Username" required />
+          <input
+            type="password"
+            name="password"
+            placeholder="Password"
+            required
+          />
+          <button type="submit">Register</button>
+        </form>
+      </section>
+
+      <!-- Login Section -->
+      <section>
+        <h2>Login</h2>
+        <form action="http://localhost:5000/login" method="POST">
+          <input type="text" name="username" placeholder="Username" required />
+          <input
+            type="password"
+            name="password"
+            placeholder="Password"
+            required
+          />
+          <button type="submit">Login</button>
+        </form>
+      </section>
+    </main>
+    <footer>
+      <!-- Your Footer Content -->
+    </footer>
+    <script src="/socket.io/socket.io.js"></script>
+    <script>
+      const socket = io();
+
+      function joinRoom(roomId) {
+        socket.emit("joinRoom", { roomId });
+      }
+
+      function leaveRoom(roomId) {
+        socket.emit("leaveRoom", { roomId });
+      }
+
+      function sendRoomMessage(roomId, message) {
+        socket.emit("roomMessage", { roomId, message });
+      }
+
+      function sendDirectMessage(receiverId, message) {
+        const senderId = getSenderId();
+        socket.emit("directMessage", { senderId, receiverId, message });
+      }
+
+      socket.on("newMessage", (message) => {
+        console.log("New message in room:", message);
+      });
+
+      socket.on("newDirectMessage", (message) => {
+        console.log("New direct message:", message);
+      });
+    </script>
+  </body>
+</html>
