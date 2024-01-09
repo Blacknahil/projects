@@ -1,0 +1,39 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="utf-8">
+    <title>Tutor Linkup</title>
+    
+</head>
+
+<body>
+    <h1>Welcome to Tutor Linkup</h1>
+<p>Find a tutor or connect with students!</p>
+
+<h2>Create a Post</h2>
+
+<% if (posts && posts.length > 0) { %>
+  <ul>
+    <% posts.forEach(post => { %>
+    
+        <p>Description: <%= post.description %></p>
+        <p>Field of Mentorship: <%= post.fieldOfMentorship %></p>
+        <p>Subjects Offered: <%= post.subjectsOffered %></p>
+        <p>Duration: <%= post.duration %></p>
+        <p>Payment Rate: <%= post.paymentRate %></p>
+        <p>Gender Preference: <%= post.genderPreference %></p>
+        <p>Time Preference: <%= post.timePreference %></p>
+        <p>Location: <%= post.location %></p>
+       
+        <!-- Add other post properties as needed -->
+  
+    <% }); %>
+  </ul>
+<% } else { %>
+  <p>No posts found.</p>
+<% } %>
+
+</body>
+
+</html>

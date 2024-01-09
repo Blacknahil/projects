@@ -55,7 +55,7 @@ const deleteUser=async (req, res, next)=>{
 
 const createUser = async (req, res, next) => {
     try {
-        const { username, email, password } = req.body;
+        const { username, email, password,address, role } = req.body;
 
         // Check if username and email are provided
         if (!username || !email) {
@@ -69,7 +69,7 @@ const createUser = async (req, res, next) => {
         }
 
         // Create a new user
-        const newUser = await User.create({ username, email, password });
+        const newUser = await User.create({ username, email, password, address, role });
 
         // Return the newly created user
         res.status(201).json({ message: "User created successfully", user: newUser });
