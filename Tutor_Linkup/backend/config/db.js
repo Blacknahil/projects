@@ -1,17 +1,21 @@
-const mongoose = require("mongoose");
-const db =
-"mongodb+srv://yordi:Yordanos@cluster0.am0h3ya.mongodb.net/?retryWrites=true&w=majority&dbname=tutorlinkup"
-/* Replace <password> with your database password */
 
-mongoose.set("strictQuery", true, "useNewUrlParser", true);
+const mongoose = require('mongoose');
+require('dotenv').config();
+
+
+const db = "mongodb+srv://Tutor_Linkup1:3fE2Ny4oWf9pwPSh@cluster0.qhs3xy1.mongodb.net/?retryWrites=true&w=majority";
+
+// Log the MongoDB URI for debugging purposes
+console.log("MongoDB URI:", db);
 
 const connectDB = async () => {
   try {
     await mongoose.connect(db);
-    console.log("MongoDB is Connected...");
+    console.log('MongoDB is Connected...');
   } catch (err) {
-    console.error(err.message);
+    console.error('Error connecting to MongoDB:', err.message);
     process.exit(1);
   }
 };
+
 module.exports = connectDB;
