@@ -1,0 +1,28 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="utf-8">
+    <title>Single Post</title>
+    <!-- Add your styles or include CSS frameworks here -->
+</head>
+
+<body>
+    <div class="container">
+        <h1>Single Post</h1>
+        <div class="card">
+            <div class="card-body">
+                <h5 class="card-title"><%= post.description %></h5>
+                <p class="card-text">Field of Mentorship: <%= post.fieldOfMentorship %></p>
+                <p class="card-text">Subjects Offered: <%= post.subjectsOffered %></p>
+                <p class="card-text">Duration: <%= post.duration %></p>
+                <p class="card-text">Payment Rate: <%= post.paymentRate %></p>
+                <p class="card-text">Gender Preference: <%= post.genderPreference %></p>
+                <p class="card-text">Time Preference: <%= post.timePreference %></p>
+                <p class="card-text">Location: <%= post.location %></p>
+            </div>
+        </div>
+    </div>
+</body>
+
+</html>

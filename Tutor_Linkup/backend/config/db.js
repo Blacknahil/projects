@@ -1,5 +1,7 @@
+
 const mongoose = require('mongoose');
 require('dotenv').config();
+
 
 const db = "mongodb+srv://Tutor_Linkup1:3fE2Ny4oWf9pwPSh@cluster0.qhs3xy1.mongodb.net/?retryWrites=true&w=majority";
 
