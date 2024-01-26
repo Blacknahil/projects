@@ -1,0 +1,67 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Who Are you?</title>
+    <link rel="stylesheet" href="styles.css">
+    <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Futura%3A500"/>
+    <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Source+Sans+Pro%3A500"/>
+    <script src="https://kit.fontawesome.com/f4c1e5f645.js" crossorigin="anonymous"></script>
+</head>
+<body>
+    <header>
+        <div class="logo">
+        <img src="../../Images/vector-F7y.png" alt="Logo"/>
+        <p>Tutor Linkup</p>
+        </div>
+        <nav>
+        <a href="#">Home</a>
+        <a href="#">About Us</a>
+        </nav>
+    </header>
+
+    <main>
+        <h1>Join as a tutor or client?</h1>
+        <div class="card">
+          <form action="user_identity.php" method="post">
+            <div>
+            <input type="radio" name="user_type" value="parent">
+            <p>I am a tutor/Mentor</p>
+            </div>
+            <div>
+            <input type="radio" name="user_type" value="tutor">
+            <p>
+            I'm a Student or Parent, looking for a tutor or mentor</p>
+            </div>
+            <div>
+            <input type="radio" name="user_type" value="agency">
+            <p>I am an agency who have many qualified tutors who wants to give tutoring services
+                </p>
+            </div>
+            <button type="submit" name="submit">Create Account</button>
+          </form>
+          <p>Already have an account? <a href="#">Log In</a></p>
+        </div>
+      </main>
+    
+    <footer>
+        <div class="about-us">
+        <p>About Us</p>
+        <p>we believe students who want to learn and dive into the ocean of knowledge and parents who invest in their child’s future should be able to choose who suits them best in an open platform. we also believe university students can become financially able if we could find them job near their campuses.</p>
+        </div>
+
+        <div class="contact-us">
+            <div class="phone">
+                <p><i class="fa-solid fa-phone"></i> +1234567890</p>
+                <p><i class="fa-solid fa-phone"></i> +1234567890</p>
+            </div>
+            <div class="social-media">
+                <i class="fa-brands fa-facebook"></i>
+                <i class="fa-brands fa-twitter"></i> 
+            </div>
+        </div>
+
+    </footer>
+</body>
+</html>
