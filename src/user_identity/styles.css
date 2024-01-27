@@ -1,6 +1,9 @@
 body{
     margin:0;
 }
+
+/* navigation bar */
+
 header {
     display: flex;
     justify-content: space-between;
@@ -36,18 +39,19 @@ nav a::after{
 nav a:hover::after{
     width: 100%;
 }
-main{
-    padding-bottom:13rem;
-    display: flex;
-    flex-direction: column;
-    align-items: center;
-    margin-top: 1rem;
-}
+
 
 
 /* main form */
 
-  
+main{
+  padding-bottom:13rem;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  margin-top: 1rem;
+}
+
   h1 {
     font-size: 2.5rem;
     font-weight: bold;
@@ -140,7 +144,9 @@ main{
   }
 
 
+  
 
+/* footer layout  */
 
 
 footer {
@@ -152,7 +158,7 @@ footer {
     position:absolute;
     height:10rem;
     bottom:0;
-    font-size: 18px;
+    font-size: 15px;
 
 }
 
