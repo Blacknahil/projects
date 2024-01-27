@@ -72,10 +72,3 @@ module.exports = {
     forgotPassword
 };
 
-/**bcrypt is used for hashing passwords. This is crucial for security.
-jsonwebtoken (jwt) is used to create a token during the login process. 
-Replace 'YourSecretKey' with an actual secret key stored securely.
-Error Handling: Responses include appropriate HTTP status codes and messages for different error scenarios.
-Email Functionality: For forgotPassword, you need to integrate an email service to actually send the reset link or code. This part is just a placeholder.
-Security and Validation: This example does not include input validation or comprehensive error handling, which are vital for production code.
-Environment Variables: Sensitive information like JWT secret keys should be stored in environment variables, not in your codebase. */
