@@ -3,8 +3,8 @@ const http = require('http');
 const socketIo = require('socket.io');
 const jwt = require('jsonwebtoken');
 const connectDB = require('./Tutor_Linkup/backend/config/db.js');
-const ChatRoom = require('./models/ChatRoom');
-const DirectMessage = require('./models/DirectMessage');
+// const ChatRoom = require('./models/ChatRoom');
+// const DirectMessage = require('./models/DirectMessage');
 const userRouter = require("./Tutor_Linkup/backend/routes/userRouters.js");
 const studyGroupRouter = require("./Tutor_Linkup/backend/routes/studyGroupRouters.js");
 const searchRouter = require("./Tutor_Linkup/backend/routes/searchRouters.js");
@@ -57,9 +57,9 @@ io.on('connection', (socket) => {
 });
 
 // Catch-all route for handling 404 errors
-app.use((req, res, next) => {
-    res.status(404).send("Sorry, can't find that!");
-});
+// app.use((req, res, next) => {
+//     res.status(404).send("Sorry, can't find that!");
+// });
 
 // Centralized error handling
 app.use((err, req, res, next) => {

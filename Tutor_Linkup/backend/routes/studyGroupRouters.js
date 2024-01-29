@@ -10,6 +10,6 @@ router.get('/get/:id', getGroup);
 router.put('/add/:id', addGroupMember);
 router.post('/create', createGroup);
 router.delete('/delete/:id', deleteGroup);
-rouer.post('/leave/:id', leaveGroup);
+router.post('/leave/:id', leaveGroup);
 
 module.exports = router;

@@ -1,4 +1,4 @@
-const Group = require("../models/group.js");  // Updated to reflect the correct model file name
+const Group = require("../models/studyGroup.js");  // Updated to reflect the correct model file name
 const asyncHandler = require("express-async-handler");
 
 const createGroup = asyncHandler(async (req, res) => {
@@ -57,6 +57,8 @@ const getGroup = asyncHandler (async (req,res) => {
     }
 
     res.json(group);
+
+});
     
 module.exports = {
     createGroup,
