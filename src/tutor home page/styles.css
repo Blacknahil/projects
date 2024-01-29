@@ -91,7 +91,7 @@ button{
     border-radius:5px;
     background-color: #1a73e8;
     color: white;
-    padding: 10px;
+    padding: 10px 20px;
     border: none;
     font-size: 15px;
     cursor: pointer;
@@ -149,6 +149,105 @@ button:hover{
 .go-to-profile{
     margin:0 auto;
 }
+
+/* post section design */
+.post-section {
+    width: 100%;
+    padding: 20px;
+    box-sizing: border-box;
+    border: 1px solid #2c3224;
+    background-color: #c0b7b7;
+  }
+
+  .section-title {
+    margin:0;
+    margin-bottom: 20px;
+  }
+  .latest-posts {
+    display: grid;
+    margin-bottom: 15px;
+  }
+
+
+.post{
+    width:80%;
+    padding:20px;
+    box-sizing:border-box;
+    border:1px solid #2c3224;
+    background-color: #7ea8d4;
+    color:white;
+    margin-bottom:20px;
+    font-size: 1.1rem;
+
+}
+.post-header{
+    display:flex;
+    justify-content:start;
+    gap:15px;
+    align-items:center;
+
+
+}
+.post-profile-image{
+    width:60px;
+    height:60px;
+    border-radius: 50%;
+    object-fit:contain;
+}
+.post-username{
+    font-size: 1rem;
+    font-weight:bold;
+    margin-bottom:5px;
+
+}
+.post-date{
+    font-size:0.8rem;
+    color:#eae7e7;
+    margin-top: 5px;
+}
+.post-content{
+    margin-top:10px;
+    margin-bottom:10px;
+
+}
+.post-text{
+    white-space: pre-wrap;
+}
+
+.post-footer{
+    display:flex;
+    justify-content:flex-end;
+
+}
+
+
+.post-form {
+    display: flex;
+    align-items: center;
+    position: relative;
+    width:80%;
+    margin: 0 auto;
+
+  }
+  
+  #post-input {
+    width: 100%;
+    padding: 0.8rem;
+    padding-right:2rem;
+    box-sizing: border-box;
+    resize: none;
+  }
+  
+  #post-btn {
+    cursor: pointer;
+    font-size: 2rem;
+    color: #006eff;
+    position: absolute;
+    right:0;
+    margin-right:0.4rem;
+
+
+  }
 /*footer desing */
 
 footer {
