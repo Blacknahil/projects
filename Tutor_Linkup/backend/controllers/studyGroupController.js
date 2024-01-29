@@ -48,9 +48,20 @@ const leaveGroup = asyncHandler(async (req, res) => {
     res.json(updatedGroup);
 });
 
+const getGroup = asyncHandler (async (req,res) => {
+    const { groupId } = req.params;
+    const group = await Group.findById(groupId);
+
+    if (!group) {
+        return res.status(404).json({ error: 'Group not found' });
+    }
+
+    res.json(group);
+    
 module.exports = {
     createGroup,
     addGroupMember,
     deleteGroup,
-    leaveGroup
+    leaveGroup, 
+    getGroup
 };
