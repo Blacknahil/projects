@@ -3,8 +3,7 @@ const mongoose = require('mongoose');
 require('dotenv').config();
 
 
-const db = "mongodb+srv://Tutor_Linkup1:3fE2Ny4oWf9pwPSh@cluster0.qhs3xy1.mongodb.net/";
-
+const db ="mongodb+srv://yordanos:1234@cluster1.isdg4lt.mongodb.net/?retryWrites=true&w=majority/";
 // Log the MongoDB URI for debugging purposes
 console.log("MongoDB URI:", db);
 
