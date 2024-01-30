@@ -1,14 +1,22 @@
-const conversation = require("../models/conversation.js");
 const express = require('express');
 const router = express.Router();
 
-const { getPrivateConversationsList, getGroupConversationsList, createConversation, getConversation } = require("../controllers/conversationController.js");
+const {
+    getPrivateConversationsList,
+    getGroupConversationsList,
+    createConversation,
+    getConversation
+} = require("../controllers/conversationController.js");
 
-// base route /messages/conversation
 
-router.get('/getPrivateCnvList', getPrivateConversationsList);
-router.get('getGroupCnvList', getGroupConversationsList);
+
+
+router.get('/private/:userId', getPrivateConversationsList);
+
+router.get('/group/:userId', getGroupConversationsList);
+
 router.post('/create', createConversation);
-router.get('/get/:id', getConversation);
+
+router.get('/get/:conversationId', getConversation);
 
 module.exports = router;

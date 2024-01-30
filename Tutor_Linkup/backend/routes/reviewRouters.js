@@ -1,13 +1,28 @@
-const review = require("../models/review.js");
 const express = require('express');
 const router = express.Router();
+const Review = require("../models/review.js");
 
-const { rateUser, commentOnUser, displayReviewPage } = require("../controllers/reviewController.js");
+const {
+    getReviews,
+    displayReviewPage,
+    getRating,
+    reviewUser
+} = require("../controllers/reviewController.js");
 
-// base route /review
+// Route to handle creating a new review
+// Endpoint: /review/rate
+router.post('/rate', reviewUser);
 
-router.post('/rate', rateUser);
-router.post('/comment', commentOnUser);
-router.get('/reviewPage', displayReviewPage)
+// Route to get all reviews
+// Endpoint: /review/reviews
+router.get('/reviews', getReviews);
+
+// Route to display the review page
+// Endpoint: /review/reviewPage
+router.get('/reviewPage', displayReviewPage);
+
+// Route to get the average rating
+// Endpoint: /review/rating
+router.get('/rating', getRating);
 
 module.exports = router;
