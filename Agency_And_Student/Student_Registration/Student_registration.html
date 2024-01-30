@@ -1,0 +1,105 @@
+<!DOCTYPE html>
+<html lang="en">
+    <head>
+        <meta charset="utf-8" />
+        <meta name="viewport" content="width=device-width, initial-scale=1" />
+        <title>Student/Parent Registration</title>
+        <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Futura%3A500"/>
+        <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Source+Sans+Pro%3A500"/>
+        <link rel="stylesheet" href="style.css">
+        <script src="https://kit.fontawesome.com/f4c1e5f645.js" crossorigin="anonymous"></script>
+    </head>
+<body>
+    <header>
+        <div class="logo">
+        <a href=""><img src="SW2logo.jpg" alt="Logo"/></a>
+        <p>Tutor Linkup</p>
+        </div>
+        <nav>
+        <a href="#">Home</a>
+        <a href="#">About Us</a>
+        <a href="#">Profile</a>
+        <a href="#">Log out</a>
+        </nav>
+    </header>
+    <div class="Student-form">
+        <h2>Student basic information</h2>
+        <form action="" class="registration-form">
+            <label for="name">Name:</label>
+            <input type="text" id="name" name="name" required>
+
+            <label for="email">Email:</label> 
+            <input type="email" id="email" name="email" required> 
+            
+            <label for="grade">Education level/Grade:</label>
+            <input type="text" id="grade" name="grade" required>
+
+            <label for="pay">Payment Range:</label>
+            <input type="text" id="pay" name="pay" required>
+
+            <label for="subject">Subject needed:</label>
+            <input type="text" id="subject" name="subject" required>
+
+            <label for="address">Address:</label>
+            <input type="text" id="address" name="address" required>
+
+            <label for="bio">Bio:</label>
+            <input type="text" id="bio" name="bio">
+
+            <div class="gender">
+                <h4>Gender</h4>
+                <select>
+                  <option>Prefer not to say</option>
+                  <option>Female</option>
+                  <option>male</option>
+                </select>
+            </div>
+
+            <div class="special">
+                <h4>Special Need</h4>
+                <select>
+                  <option>Prefer not to say</option>
+                  <option>Yes</option>
+                  <option>No</option>
+                </select>
+            </div>
+
+            <label for="desc">Description for special need(If yes):</label>
+            <input type="text" id="desc" name="desc">
+
+            <label for="expect">Expectation:</label>
+            <input type="text" id="expect" name="expect">
+
+            <label for="gender-pref">Gender Preference:</label>
+            <input type="text" id="gender-pref" name="gender-pref">
+
+            
+
+            <div class="upload">Upload profile photo</div>
+            <form action="/action_page.p">
+                <input type="file" id="myFile" name="filename">
+        
+            </form>
+    
+            <button type="submit"  class="submit-button">Submit</button>
+        </form>
+    </div>
+    <footer>
+        <div class="about-us">
+        <p>About Us</p>
+        <p>we believe students who want to learn and dive into the ocean of <br/>knowledge and parents who invest in their child’s future should be <br/>able to choose who suits them best in an open platform. we also <br/> believe university students can become financially able if we could <br/> find them job near their campuses.</p>
+        </div>
+        <div class="contact-us">
+            <div class="phone">
+                <p><i class="fa-solid fa-phone"></i></i> +1234567890</p>
+                <p><i class="fa-solid fa-phone"></i></i> +1234567890</p>
+            </div>
+            <div class="social-media">
+                <i class="fa-brands fa-facebook"></i>
+                <i class="fa-brands fa-twitter"></i> 
+            </div>
+        </div>
+    </footer>
+    <script src="SR.js"></script>
+</body>
+</html>
