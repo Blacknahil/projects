@@ -4,7 +4,7 @@
   "description": "",
   "main": "server.js",
   "scripts": {
-    "test": "mocha",  
+    "test": "mocha",
     "start": "node server.js",
     "app": "nodemon server.js"
   },
@@ -31,7 +31,7 @@
     "socket.io": "^4.7.3"
   },
   "devDependencies": {
-    "chai": "^5.0.3",
+    "chai": "^4.3.4",
     "mocha": "^10.2.0",
     "nodemon": "^3.0.2"
   }
