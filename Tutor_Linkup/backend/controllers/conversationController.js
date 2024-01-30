@@ -2,43 +2,25 @@ const conversation = require("../models/conversation.js");
 const asyncHandler = require("express-async-handler");
 const express = require("express");
 
-const createConversation = asyncHandler(async (req, res) => {
-    const { participants, isGroup, name } = req.body; // Assuming these fields are required for a conversation
-    const newConversation = await conversation.create({ participants, isGroup, name });
-    res.status(201).json(newConversation);
-});
+const createConversation = ((req, res) => {
+    res.send('implement this function where users edit their own profile')
+})
 
-const getConversation = asyncHandler(async (req, res) => {
-    const { conversationId } = req.params;
-    const conv = await conversation.findById(conversationId);
-    if (!conv) {
-        return res.status(404).send('Conversation not found');
-    }
-    res.json(conv);
-});
+const getConversation = ((req, res) => {
+    res.send('implement this function where the user views other users profile')
+})
 
-const getPrivateConversationsList = asyncHandler(async (req, res) => {
-    const { userId } = req.params; // Assuming userId is passed as a parameter
-    const privateConversations = await conversation.find({
-        participants: { $in: [userId] },
-        isGroup: false
-    });
-    res.json(privateConversations);
-});
+const getPrivateConversationsList = ((req, res) => {
+    res.send('implement this function where the user views other users profile')
+})
 
-const getGroupConversationsList = asyncHandler(async (req, res) => {
-    const { userId } = req.params; // Assuming userId is passed as a parameter
-    const groupConversations = await conversation.find({
-        participants: { $in: [userId] },
-        isGroup: true
-    });
-    res.json(groupConversations);
-});
+const getGroupConversationsList= ((req, res) => {
+    res.send('implement this function where the user views other users profile')
+})
 
 module.exports = {
-    createConversation,
-    getConversation,
-    getPrivateConversationsList,
-    getGroupConversationsList
-};
-
+   createConversation,
+   getConversation,
+   getPrivateConversationsList,
+   getGroupConversationsList
+}
