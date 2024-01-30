@@ -54,11 +54,24 @@ nav a:hover::after{
 /* header design */
 
 /*main section design */
+.body-header{
+    display:flex;
+    gap:4rem;
+    justify-content:space-around;
+    align-items:end;
+    margin:1rem 3rem;
+
+}
+.reccom-search-bar{
+    display: flex;
+    align-items:center;
+
+}
 
 .search-bar {
     position: relative;
     width: 250px;
-    margin: 0 auto;
+
   }
   
   #search-input {
@@ -104,10 +117,9 @@ button:hover{
   }
   #primary-tutor{
     /* align this card to the left of the page; */
-    margin-right: 20px;
-    margin-top: 20px;
-    width:400px;
+    width:450px;
     background-color: antiquewhite;
+    margin:0;
   }
   .profile-card{
     display:grid;
@@ -149,14 +161,29 @@ button:hover{
 .go-to-profile{
     margin:0 auto;
 }
+.others-profiles{
+    background-color: #799dae;
+    padding:1rem;
+    margin:0 10rem;
+}
+.load-more{
+    display:flex;
+    justify-content:center;
+
+}
+#load-more-btn{
+    background-color: #509dc1;
+    padding: 10px;
+}
 
 /* post section design */
 .post-section {
-    width: 100%;
+    width: auto;
     padding: 20px;
     box-sizing: border-box;
     border: 1px solid #2c3224;
     background-color: #c0b7b7;
+    margin:50px;
   }
 
   .section-title {
