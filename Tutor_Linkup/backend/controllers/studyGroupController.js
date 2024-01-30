@@ -1,69 +1,26 @@
-const Group = require("../models/studyGroup.js");  // Updated to reflect the correct model file name
+const studyGroup = require("../models/studyGroup.js");
 const asyncHandler = require("express-async-handler");
+const express = require("express");
 
-const createGroup = asyncHandler(async (req, res) => {
-    const { userId, content } = req.body;
-    const newGroup = new Group({ sender: userId, content });
-    const savedGroup = await newGroup.save();
+const createGroup = ((req, res) => {
+    res.send('implement this function where users create a group')
+})
 
-    res.json(savedGroup);
-});
+const addGroupMember = ((req, res) => {
+    res.send('implement this function where the user adds a group member')
+})
 
-const addGroupMember = asyncHandler(async (req, res) => {
-    const { groupId, userId } = req.body;
-    const group = await Group.findById(groupId);
+const deleteGroup = ((req, res) => {
+    res.send('implement this function where the user deletes the group')
+})
 
-    if (!group) {
-        return res.status(404).json({ error: 'Group not found' });
-    }
+const getGroup = ((req, res) => {
+    res.send('implement this function where the particular group is displayed')
+})
 
-    group.members.push(userId);
-    const updatedGroup = await group.save();
-
-    res.json(updatedGroup);
-});
-
-const deleteGroup = asyncHandler(async (req, res) => {
-    const { groupId } = req.params;
-    const deletedGroup = await Group.findByIdAndDelete(groupId);
-
-    if (!deletedGroup) {
-        return res.status(404).json({ error: 'Group not found' });
-    }
-
-    res.json({ message: 'Group deleted successfully' });
-});
-
-const leaveGroup = asyncHandler(async (req, res) => {
-    const { groupId, userId } = req.body;
-    const group = await Group.findById(groupId);
-
-    if (!group) {
-        return res.status(404).json({ error: 'Group not found' });
-    }
-
-    group.members.pull(userId);
-    const updatedGroup = await group.save();
-
-    res.json(updatedGroup);
-});
-
-const getGroup = asyncHandler (async (req,res) => {
-    const { groupId } = req.params;
-    const group = await Group.findById(groupId);
-
-    if (!group) {
-        return res.status(404).json({ error: 'Group not found' });
-    }
-
-    res.json(group);
-
-});
-    
 module.exports = {
     createGroup,
     addGroupMember,
     deleteGroup,
-    leaveGroup, 
     getGroup
-};
+}
