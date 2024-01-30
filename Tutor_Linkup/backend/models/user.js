@@ -46,7 +46,7 @@ userSchema.pre('save', async function (next) {
         return next(error);
     }
   });
-UserSchema.plugin(passportLocalMongoose);
+userSchema.plugin(passportLocalMongoose);
 const user = mongoose.model('user', userSchema);
 
 module.exports = user;
