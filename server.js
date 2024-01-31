@@ -8,6 +8,7 @@ const DirectMessage = require('./Tutor_Linkup/backend/models/DirectMessage');
 const userRouter = require("./Tutor_Linkup/backend/routes/userRouters.js");
 const studyGroupRouter = require("./Tutor_Linkup/backend/routes/studyGroupRouters.js");
 const searchRouter = require("./Tutor_Linkup/backend/routes/searchRouters.js");
+const session=require('express-session');
 const reviewRouter = require("./Tutor_Linkup/backend/routes/reviewRouters.js");
 const postsRouter = require("./Tutor_Linkup/backend/routes/postsRouters.js");
 const messagesRouter = require("./Tutor_Linkup/backend/routes/messagesRouters.js");
@@ -34,6 +35,12 @@ app.set('views', path.join(__dirname, 'Tutor_Linkup', 'backend', 'views'));
 
 app.use(express.json());
 app.use(express.static(path.join(__dirname, 'public')));
+app.use(session({
+    secret:'secret',
+    resave:false,
+    saveUninitialized:true,
+    cookie:{secure:false}
+}));
 
 const { displayPosts, displaySinglePost } = require('./Tutor_Linkup/backend/controllers/postsController.js');
 
@@ -48,6 +55,7 @@ app.use("/posts", postsRouter);
 app.use("/user/messages", messagesRouter);
 app.use("/messages/conversation", conversationRouter);
 app.use("/signup", authRouter);
+
 
 const server = http.createServer(app);
 const io = socketIo(server);

@@ -23,6 +23,7 @@ app.use(session({
     secret: 'secret',
     resave: true,
     saveUninitialized: true,
+    cookie: { secure: false }
 }));
 
 // Passport middleware
@@ -58,6 +59,5 @@ app.get('/logout', (req, res) => {
 app.get('/dashboard', (req, res) => {
     res.send('Dashboard - User Logged In');
 });
-
 const PORT = process.env.PORT || 5000;
 app.listen(PORT, console.log(`Server running on port ${PORT}`));

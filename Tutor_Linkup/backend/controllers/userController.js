@@ -80,6 +80,12 @@ const createUser = async (req, res, next) => {
     }
 };
 
+const userIdentity = async (req,res) =>{
+    console.log("user identity saving to cookie");
+    req.session.role=req.body.role;
+    res.redirect("/user/sign_up")
+}
+
 
 
 
@@ -87,7 +93,8 @@ module.exports = {
     editProfile,
     viewProfile,
     deleteUser,
-    createUser
+    createUser,
+    userIdentity,
 }
 
 
