@@ -1,26 +1,57 @@
-const mongoose = require('mongoose');
-const Schema = mongoose.Schema;
+// const mongoose = require('mongoose');
+// const Schema = mongoose.Schema;
 
-const studyGroupSchema = new Schema({
-    sender: { 
-        type: Schema.Types.ObjectId, 
-        ref: 'user', 
-        required: true 
+// const studyGroupSchema = new Schema({
+//     sender: { 
+//         type: Schema.Types.ObjectId, 
+//         ref: 'user', 
+//         required: true 
+//     },
+//     conversationId: { 
+//         type: String,
+//         ref: 'conversation', 
+//         // required: true 
+//     },
+//     content: { 
+//         type: String, 
+//         // required: true 
+//     },
+//     timestamp: { 
+//         type: Date, 
+//         default: Date.now 
+//     },
+//     members: {
+
+//     }
+    
+// });
+
+// const studyGroup = mongoose.model('studyGroup', studyGroupSchema);
+// module.exports = studyGroup;
+
+
+const mongoose = require("mongoose");
+
+const GroupSchema = new mongoose.Schema({
+  sender: {
+    type: mongoose.Schema.Types.ObjectId,
+    ref: "User",
+    required: true,
+  },
+  content: {
+    type: String,
+    required: true,
+  },
+  members: [
+    {
+      type: mongoose.Schema.Types.ObjectId,
+      ref: "User",
     },
-    conversationId: { 
-        type: String,
-        ref: 'conversation', 
-        required: true 
-    },
-    content: { 
-        type: String, 
-        required: true 
-    },
-    timestamp: { 
-        type: Date, 
-        default: Date.now 
-    },
+  ],
+  createdAt: {
+    type: Date,
+    default: Date.now,
+  },
 });
 
-const studyGroup = mongoose.model('studyGroup', studyGroupSchema);
-module.exports = studyGroup;
+module.exports = mongoose.model("Group", GroupSchema);
