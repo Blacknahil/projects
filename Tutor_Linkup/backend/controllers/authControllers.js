@@ -5,9 +5,9 @@ const asyncHandler = require("express-async-handler");
 const express = require("express");
 
 const signUp = asyncHandler(async (req, res) => {
-    const { email, password, username } = req.body;
+    const { email, password, username,role } = req.body;
     const hashedPassword = await bcrypt.hash(password, 10); // Hashing the password
-    const newUser = await user.create({ email, username, password: hashedPassword });
+    const newUser = await user.create({ email, username, password: hashedPassword ,role});
     res.status(201).json(newUser);
 });
 

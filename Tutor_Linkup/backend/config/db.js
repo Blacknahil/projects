@@ -3,7 +3,7 @@ const mongoose = require('mongoose');
 require('dotenv').config();
 
 
-const db = "mongodb+srv://yordanos:12345@cluster1.isdg4lt.mongodb.net/?retryWrites=true&w=majority/";
+const db = "mongodb+srv://yordanos:12345@cluster1.isdg4lt.mongodb.net/?retryWrites=true&w=majority";
 
 // Log the MongoDB URI for debugging purposes
 console.log("MongoDB URI:", db);

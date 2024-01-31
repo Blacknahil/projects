@@ -7,7 +7,7 @@ const { signUp, login, resetPassword, changePassword, forgotPassword } = require
 
 // base route /signup
 
-router.get('/:id', signUp);
+router.post('/', signUp);
 router.get('/login/:id', login);
 router.put('/reset/:id', resetPassword);
 router.put('/change/:id', changePassword);
