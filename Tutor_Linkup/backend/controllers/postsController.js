@@ -4,23 +4,23 @@ const express = require("express");
 
 const displayPosts = async (req, res) => {
     try {
-      // Fetch posts from the database
-      const posts = await Post.find();
-     
-  
-      // Render the EJS file and pass the posts as data
-      res.render('create-post', { posts });
+        // Fetch posts from the database
+        const posts = await Post.find();
+
+        // Send the posts as JSON data in the response
+        res.status(200).json({ posts });
     } catch (error) {
-      console.error(error);
-      res.status(500).send('Internal Server Error');
+        console.error(error);
+        res.status(500).json({ error: 'Internal Server Error' });
     }
-  };
-  
+};
+
  
   
 
 const createPost = async (req, res) => {
   try {
+    console.log('Request Body:', req.body);
     // Extract post data from the request body
     const postData = {
       description: req.body.description,
@@ -35,7 +35,7 @@ const createPost = async (req, res) => {
 
     // Create a new post using the Post model
     const newPost = await Post.create(postData);
-
+    
     // Send a success response
     res.status(201).json({ message: 'Post created successfully', post: newPost });
   } catch (error) {

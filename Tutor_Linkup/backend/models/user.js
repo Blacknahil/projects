@@ -23,7 +23,7 @@ const userSchema = new Schema({
     role: {
         type: String,
         enum: ['Parent/Student', 'Tutor', 'Agency'],
-        required: [true, "Role is required"]
+        // required: [true, "Role is required"]
     },
     address: {
         type: String,

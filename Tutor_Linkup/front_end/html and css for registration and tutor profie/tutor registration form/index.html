@@ -1,0 +1,250 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>registration form</title>
+    <link rel="stylesheet" href="styles.css">
+    <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Futura%3A500"/>
+    <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Source+Sans+Pro%3A500"/>
+    <script src="https://kit.fontawesome.com/f4c1e5f645.js" crossorigin="anonymous"></script>
+
+</head>
+<body>
+
+    <header>
+        <div class="logo">
+        <img src="../Images/vector-F7y.png" alt="Logo"/>
+        <p>Tutor Linkup</p>
+        </div>
+        <nav>
+        <a href="#">Home</a>
+        <a href="#">Profile</a>
+        <a href="#">Log Out</a>
+        </nav>
+    </header>
+
+    <main>
+<!-- 
+        <form>  
+            <div class="container">  
+          <h1> Tutor/ Mentor Registeration Form</h1>
+            <hr>  
+            <div>
+            <label for="name"> Fullname </label>   
+          <input type="text" name="name" placeholder= "Fullname" size="15" required />  
+        </div>
+        <div>
+          <label for="email"><b>Email</b></label>  
+          <input type="text" placeholder="Enter Email" name="email" required>  
+          </div>
+
+          <div>
+            <label for="current_password">Current Password:</label>
+            <input type="password" id="current_password" name="current_password" autocomplete="current-password">
+            new password:
+            <label for="new_password">New Password:</label>
+            <input type="password" id="new_password" name="new_password" autocomplete="new-password">
+            confirm password:
+            <label for="confirm_password">Confirm Password:</label>
+            <input type="password" id="confirm_password" name="confirm_password" autocomplete="new-password">
+
+          </div>
+
+          <div>
+          <label for="gender">Gender:</label>
+          <select id="gender" name="gender" form="gender-list">
+              <option value="male">Male</option>
+              <option value="female">Female</option>
+          </select>
+            </div>
+
+            <div>
+                <label for ="phone">Phone Number: </label>
+                <input type="text" name="country code" placeholder="Country Code"  value="+251" size="2"/>   
+                <input type="text" name="phone" placeholder="phone no." size="10" required>
+            </div>
+
+          <div>
+          <label for="qualification" >   
+            Qualification:  
+            </label>   
+            <select>  
+              <option value="degree">Degree</option>  
+              <option value="undergrad">Undergraduate</option>  
+              <option value="highschooler">HighSchool Student</option>  
+              <option value="postgraduate">PostGraduate</option>  
+              </select>  
+                </div>
+            <div>
+                <label for="university">University</label>
+                <input type="text" id="university" name="university">
+            </div>
+            <div>
+                <label for="price">Price Expectation(in birr per hour)</label>
+                <select id="price" name="price" form="price-list">
+                    <option value="1000">100-200</option>
+                    <option value="2000">200-400</option>
+                    <option value="4000">400 and above</option>
+                </select>
+            </div>
+
+            <div class="bio">
+                <h4>Short Bio</h4>
+                <textarea id="bio" name="bio" rows="4" cols="10" placeholder="bio">
+                </textarea>
+            </div>
+
+            <div class="subjects_offered">
+                    <label for="subjects">Subjects offered</label>
+                    <form id="subjects-list">
+                        <input type="checkbox" id="english" name="subjects" value="english">
+                        <label for="english">English</label><br>
+
+                        <input type="checkbox" id="economics" name="subjects" value="economics">
+                        <label for="economics">Economics</label><br>
+
+                        <input type="checkbox" id="history" name="subjects" value="history">
+                        <label for="history">History</label><br>
+                        <input type="checkbox" id="math" name="subjects" value="math">
+                        <label for="math">Math</label><br>
+                        <input type="checkbox" id="physics" name="subjects" value="physics">
+                        <label for="physics">Physics</label><br>
+                        <input type="checkbox" id="chemistry" name="subjects" value="chemistry">
+                        <label for="chemistry">Chemistry</label><br>
+                        <input type="checkbox" id="biology" name="subjects" value="biology">
+                        <label for="biology">Biology</label><br>
+                        <input type="checkbox" id="other" name="other" value="other">
+                        <label for="other-subjects">Others</label><br>
+                        <input type="text" id="other-subjects" name="other" placeholder="Other">
+                    </form>
+                </div>
+
+
+            <div class="mentorship_fields">
+                <label for="fields">Mentorship Fields</label>
+                <form id="fields-list">
+                    <input type="checkbox" id="programming" name="fields" value="programming">
+                    <label for="programming">Computer Programming</label><br>
+
+                    <input type="checkbox" id="graphics" name="fields" value="a">
+                    <label for="amharic">Graphics Design</label><br>
+
+                    <input type="checkbox" id="arts" name="fieds" value="arts">
+                    <label for="arts">Arts</label><br>
+
+                    <input type="checkbox" id="music" name="fields" value="music">
+                    <label for="music">Music</label><br>
+
+                    <input type="checkbox" id="webDesign" name="subjects" value="webDesign">
+                    <label for="physics">Website Development</label><br>
+
+                    <label for="other-mentorship">Others</label><br>
+                    <input type="text" id="other-mentorship" name="other" placeholder="Other">
+                </form>
+            </div>
+
+            <div>
+                <label for="availability>">Availability</label>
+                <form id="availability-list">
+                    <input type="checkbox" id="monday" name="availability" value="monday">
+                    <label for="monday">Monday</label><br>
+
+                    <input type="checkbox" id="tuesday" name="availability" value="tuesday">
+                    <label for="tuesday">Tuesday</label><br>
+
+                    <input type="checkbox" id="wednesday" name="availability" value="wednesday">
+                    <label for="wednesday">Wednesday</label><br>
+
+                    <input type="checkbox" id="thursday" name="availability" value="thursday">
+                    <label for="thursday">Thursday</label><br>
+
+                    <input type="checkbox" id="friday" name="availability" value="friday">
+                    <label for="friday">Friday</label><br>
+
+                    <input type="checkbox" id="saturday" name="availability" value="saturday">
+                    <label for="saturday">Saturday</label><br>
+
+                    <input type="checkbox" id="sunday" name="availability" value="sunday">
+                    <label for="sunday">Sunday</label><br>
+
+                    <div id="time_slots">
+                        <input type="checkbox" id="morning" name="time_slots" value="morning">
+                        <label for="morning">Morning</label><br>
+
+                        <input type="checkbox" id="afternoon" name="time_slots" value="afternoon">
+                        <label for="afternoon">Afternoon</label><br>
+
+                        <input type="checkbox" id="evening" name="time_slots" value="evening">
+                        <label for="evening">Evening</label><br>
+                    </div>
+                    
+                </form>
+
+            </div>
+
+            <div class="address">
+                <label for="address">Address</label>
+                <input type="text" id="address" name="address" placeholder="mexico,lideta firdbet">
+                </div>
+            <div class="volunteer">
+                <label for="volunteer">Do you want to Volunteer? </label>
+                <select id="volunteer" name="volunteer" form="volunteer-list">
+                    <option value="yes">Yes</option>
+                    <option value="no">No</option>
+                </select>
+            </div>
+
+            <div>
+                <button type="submit" class="submitbtn">Submit Form</button>
+                <button type="submit" class="cancelbtn">Cancel</button>
+            </div>
+            </div>
+                </form> -->
+
+                <h1>Create a New Post</h1>
+        <form id="postForm">
+            <label for="description">Description:</label>
+            <textarea id="description" name="description" required></textarea>
+
+            <label for="fieldOfMentorship">Field of Mentorship:</label>
+            <select id="fieldOfMentorship" name="fieldOfMentorship" required>
+                <option value="Art">Art</option>
+                <option value="Music">Music</option>
+                <!-- Add other options as needed -->
+            </select>
+
+            <label for="subjectsOffered">Subjects Offered:</label>
+            <select id="subjectsOffered" name="subjectsOffered" required>
+                <option value="Math">Math</option>
+                <option value="English">English</option>
+                <!-- Add other options as needed -->
+            </select>
+
+            <!-- Add other form fields as needed -->
+
+            <button type="button" onclick="createPost()">Post</button>
+        </form>
+                   
+    </main>
+    <footer>
+        <div class="about-us">
+        <p>About Us</p>
+        <p>we believe students who want to learn and dive into the ocean of knowledge and parents who invest in their child’s future should be able to choose who suits them best in an open platform. we also believe university students can become financially able if we could find them job near their campuses.</p>
+        </div>
+
+        <div class="contact-us">
+            <div class="phone">
+                <p><i class="fa-solid fa-phone"></i> +1234567890</p>
+                <p><i class="fa-solid fa-phone"></i> +1234567890</p>
+            </div>
+            <div class="social-media">
+                <i class="fa-brands fa-facebook"></i>
+                <i class="fa-brands fa-twitter"></i> 
+            </div>
+        </div>
+
+    </footer>
+    <script src="script.js"></script>
+</body>
+</html>

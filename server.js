@@ -16,15 +16,29 @@ const authRouter = require("./Tutor_Linkup/backend/routes/authRouters.js");
 const path = require('path');
 const cors = require('cors');
 const rateLimit = require('express-rate-limit');
+const bodyParser= require('body-parser');
+const otpRoute= require('./Tutor_Linkup/backend/routes/otpRouters.js')
+
+
 
 const app = express();
 connectDB();
+
+
+// Use the OTP route
+app.use('/otp', otpRoute);
+
+
+app.use(bodyParser.json());
+app.use(cors())
 
 // Apply rate limiter to all requests
 const limiter = rateLimit({
     windowMs: 15 * 60 * 1000, // 15 minutes
     max: 100 // limit each IP to 100 requests per windowMs
 });
+
+app.use('/auth',authRouter)
 
 app.use(limiter);
 app.use(cors());
