@@ -82,18 +82,23 @@ main{
     border: 1px solid #f1f1f1;
     margin-bottom: 25px;
   }
-  .registerbtn {
+  button {
     background-color: #4CAF50;
     color: white;
     padding: 16px 20px;
     margin: 8px 0;
     border: none;
     cursor: pointer;
-    width: 100%;
     opacity: 0.9;
+    box-sizing: border-box;
   }
-  .registerbtn:hover {
+  .submitbtn:hover {
     opacity: 1;
+    background-color: #74e578;
+  }
+  .btns{
+    display: flex;
+    flex-direction: column;
   }
 
 

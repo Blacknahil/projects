@@ -4,6 +4,7 @@
         <meta charset="utf-8" />
         <meta name="viewport" content="width=device-width, initial-scale=1" />
         <title>Agency Registration</title>
+        <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta2/css/all.min.css"/>
         <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Futura%3A500"/>
         <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Source+Sans+Pro%3A500"/>
         <link rel="stylesheet" href="style.css">
@@ -32,26 +33,28 @@
             <input type="email" id="email" name="email" required> 
             
             <label for="phone-number">Phone Number:</label>
-            <input type="text" id="phone-number" name="phone-number" required>
+            <input type="text" id="phone" name="phone-number" required>
 
             <label for="bio">Bio:</label>
             <input type="text" id="bio" name="bio">
 
             <label for="address">Agency Bureau Address:</label>
             <input type="text" id="address" name="address">
-            <div class="upload">Upload License</div>
+            <div class="upload">Upload License
             <form action="/action_page.p">
                 <input type="file" id="myFile" name="filename" required>
         
             </form>
+        </div>
     
-            <div class="upload">Upload Agency Logo(optional)</div>
+            <div class="upload">Upload Agency Logo(optional)
             <form action="/action_page.p">
                 <input type="file" id="myFile" name="filename">
         
             </form>
+        </div>
     
-            <button type="submit"  class="submit-button">Submit</button>
+            <button type="submit"  class="submitbtn">Submit</button>
         </form>
     </div>
     <footer>
@@ -70,6 +73,6 @@
             </div>
         </div>
     </footer>
-    <script src="AR.js"></script>
+    <script src="script.js"></script>
 </body>
 </html>
