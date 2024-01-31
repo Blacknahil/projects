@@ -42,3 +42,12 @@ function showWhatWeDoCards() {
 
 showWhatWeDoCards();
 setInterval(showWhatWeDoCards, 3000);
+
+
+
+document.getElementById('anchor_student').addEventListener('click', function (event) {
+    localStorage.setItem('role', 'parent/student');
+})
+document.getElementById('anchor_tutor').addEventListener('click',function(event){
+    localStorage.setItem('role','tutor/mentor');
+})
