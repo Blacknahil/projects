@@ -5,7 +5,7 @@ const path=require('path');
 const {viewProfile,
      editProfile, 
      deleteUser, 
-     createUser} = require('../controllers/userController.js');
+     createUser,userIdentity} = require('../controllers/userController.js');
 
 // const {
 //     signUp,

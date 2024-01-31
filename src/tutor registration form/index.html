@@ -61,7 +61,6 @@
 
             <div>
                 <label for ="phone">Phone Number: </label>
-                <input type="text" name="country code" placeholder="Country Code"  value="+251" size="2"/>   
                 <input type="text" name="phone" placeholder="phone no." size="10" required>
             </div>
 
@@ -69,7 +68,7 @@
           <label for="qualification" >   
             Qualification:  
             </label>   
-            <select>  
+            <select id="#qualification">  
               <option value="degree">Degree</option>  
               <option value="undergrad">Undergraduate</option>  
               <option value="highschooler">HighSchool Student</option>  
@@ -96,87 +95,168 @@
             </div>
 
             <div class="subjects_offered">
-                    <label for="subjects">Subjects offered</label>
-                    <form id="subjects-list">
-                        <input type="checkbox" id="english" name="subjects" value="english">
-                        <label for="english">English</label><br>
-
-                        <input type="checkbox" id="economics" name="subjects" value="economics">
-                        <label for="economics">Economics</label><br>
-
-                        <input type="checkbox" id="history" name="subjects" value="history">
-                        <label for="history">History</label><br>
-                        <input type="checkbox" id="math" name="subjects" value="math">
-                        <label for="math">Math</label><br>
-                        <input type="checkbox" id="physics" name="subjects" value="physics">
-                        <label for="physics">Physics</label><br>
-                        <input type="checkbox" id="chemistry" name="subjects" value="chemistry">
-                        <label for="chemistry">Chemistry</label><br>
-                        <input type="checkbox" id="biology" name="subjects" value="biology">
-                        <label for="biology">Biology</label><br>
-                        <input type="checkbox" id="other" name="other" value="other">
-                        <label for="other-subjects">Others</label><br>
-                        <input type="text" id="other-subjects" name="other" placeholder="Other">
-                    </form>
-                </div>
-
-
-            <div class="mentorship_fields">
-                <label for="fields">Mentorship Fields</label>
-                <form id="fields-list">
-                    <input type="checkbox" id="programming" name="fields" value="programming">
-                    <label for="programming">Computer Programming</label><br>
-
-                    <input type="checkbox" id="graphics" name="fields" value="a">
-                    <label for="amharic">Graphics Design</label><br>
-
-                    <input type="checkbox" id="arts" name="fieds" value="arts">
-                    <label for="arts">Arts</label><br>
-
-                    <input type="checkbox" id="music" name="fields" value="music">
-                    <label for="music">Music</label><br>
-
-                    <input type="checkbox" id="webDesign" name="subjects" value="webDesign">
-                    <label for="physics">Website Development</label><br>
-
-                    <label for="other-mentorship">Others</label><br>
-                    <input type="text" id="other-mentorship" name="other" placeholder="Other">
+                <label for="subjects">Subjects offered</label>
+                <form id="subjects-list">
+                    <input type="checkbox" name="subjects" value="english">
+                    <label for="english">English</label><br>
+            
+                    <input type="checkbox" name="subjects" value="economics">
+                    <label for="economics">Economics</label><br>
+            
+                    <input type="checkbox" name="subjects" value="history">
+                    <label for="history">History</label><br>
+            
+                    <input type="checkbox" name="subjects" value="math">
+                    <label for="math">Math</label><br>
+            
+                    <input type="checkbox" name="subjects" value="physics">
+                    <label for="physics">Physics</label><br>
+            
+                    <input type="checkbox" name="subjects" value="chemistry">
+                    <label for="chemistry">Chemistry</label><br>
+            
+                    <input type="checkbox" name="subjects" value="biology">
+                    <label for="biology">Biology</label><br>
+            
+                    <input type="checkbox" name="subjects" value="other">
+                    <label for="other-subjects">Others</label><br>
+                    <input type="text" id="other-subjects" name="other" placeholder="Other">
                 </form>
             </div>
 
+
+                <div class="mentorship_fields">
+                    <label for="fields">Mentorship Fields</label>
+                    <form id="fields-list">
+                        <input type="checkbox" name="fields" value="programming">
+                        <label for="programming">Computer Programming</label><br>
+                
+                        <input type="checkbox" name="fields" value="graphics">
+                        <label for="graphics">Graphics Design</label><br>
+                
+                        <input type="checkbox" name="fields" value="arts">
+                        <label for="arts">Arts</label><br>
+                
+                        <input type="checkbox" name="fields" value="music">
+                        <label for="music">Music</label><br>
+                
+                        <input type="checkbox" name="fields" value="web">
+                        <label for="web">Website Development</label><br>
+                
+                        <label for="other-mentorship">Others</label><br>
+                        <input type="text" name="other-mentorship" placeholder="Other">
+                    </form>
+                </div>
+
             <div>
+
                 <label for="availability>">Availability</label>
                 <form id="availability-list">
-                    <input type="checkbox" id="monday" name="availability" value="monday">
-                    <label for="monday">Monday</label><br>
 
-                    <input type="checkbox" id="tuesday" name="availability" value="tuesday">
-                    <label for="tuesday">Tuesday</label><br>
+                <div class="day" id="monday">
+                    <input type="checkbox" name="availability" value="monday">
+                    <label>Monday</label><br>
+                    <div class="time_slots" style="display: none;">
+                        <input type="checkbox" name="time_slots" value="morning">
+                        <label>Morning</label><br>
 
-                    <input type="checkbox" id="wednesday" name="availability" value="wednesday">
-                    <label for="wednesday">Wednesday</label><br>
+                        <input type="checkbox" name="time_slots" value="afternoon">
+                        <label>Afternoon</label><br>
 
-                    <input type="checkbox" id="thursday" name="availability" value="thursday">
-                    <label for="thursday">Thursday</label><br>
+                        <input type="checkbox" name="time_slots" value="evening">
+                        <label>Evening</label><br>
+                    </div>
+                </div>
 
-                    <input type="checkbox" id="friday" name="availability" value="friday">
-                    <label for="friday">Friday</label><br>
+                <div class="day" id="tuesday">
+                    <input type="checkbox" name="availability" value="tuesday">
+                    <label>Monday</label><br>
+                    <div class="time_slots" style="display: none;">
+                        <input type="checkbox" name="time_slots" value="morning">
+                        <label>Morning</label><br>
 
-                    <input type="checkbox" id="saturday" name="availability" value="saturday">
-                    <label for="saturday">Saturday</label><br>
+                        <input type="checkbox" name="time_slots" value="afternoon">
+                        <label>Afternoon</label><br>
 
-                    <input type="checkbox" id="sunday" name="availability" value="sunday">
-                    <label for="sunday">Sunday</label><br>
+                        <input type="checkbox" name="time_slots" value="evening">
+                        <label>Evening</label><br>
+                    </div>
+                </div>
 
-                    <div id="time_slots">
-                        <input type="checkbox" id="morning" name="time_slots" value="morning">
-                        <label for="morning">Morning</label><br>
+                <div class="day" id="wednesday">
+                    <input type="checkbox" name="availability" value="wednesday">
+                    <label>Monday</label><br>
+                    <div class="time_slots" style="display: none;">
+                        <input type="checkbox" name="time_slots" value="morning">
+                        <label>Morning</label><br>
 
-                        <input type="checkbox" id="afternoon" name="time_slots" value="afternoon">
-                        <label for="afternoon">Afternoon</label><br>
+                        <input type="checkbox" name="time_slots" value="afternoon">
+                        <label>Afternoon</label><br>
 
-                        <input type="checkbox" id="evening" name="time_slots" value="evening">
-                        <label for="evening">Evening</label><br>
+                        <input type="checkbox" name="time_slots" value="evening">
+                        <label>Evening</label><br>
+                    </div>
+                </div>
+
+                <div class="day" id="thursday">
+                    <input type="checkbox" name="availability" value="thursday">
+                    <label>Monday</label><br>
+                    <div class="time_slots" style="display: none;">
+                        <input type="checkbox" name="time_slots" value="morning">
+                        <label>Morning</label><br>
+
+                        <input type="checkbox" name="time_slots" value="afternoon">
+                        <label>Afternoon</label><br>
+
+                        <input type="checkbox" name="time_slots" value="evening">
+                        <label>Evening</label><br>
+                    </div>
+                </div>
+
+                <div class="day" id="friday">
+                    <input type="checkbox" name="availability" value="friday">
+                    <label>Monday</label><br>
+                    <div class="time_slots" style="display: none;">
+                        <input type="checkbox" name="time_slots" value="morning">
+                        <label>Morning</label><br>
+
+                        <input type="checkbox" name="time_slots" value="afternoon">
+                        <label>Afternoon</label><br>
+
+                        <input type="checkbox" name="time_slots" value="evening">
+                        <label>Evening</label><br>
+                    </div>
+                </div>
+
+                <div class="day" id="saturday">
+                    <input type="checkbox" name="availability" value="saturday">
+                    <label>Monday</label><br>
+                    <div class="time_slots" style="display: none;">
+                        <input type="checkbox" name="time_slots" value="morning">
+                        <label>Morning</label><br>
+
+                        <input type="checkbox" name="time_slots" value="afternoon">
+                        <label>Afternoon</label><br>
+
+                        <input type="checkbox" name="time_slots" value="evening">
+                        <label>Evening</label><br>
+                    </div>
+                </div>
+
+                <div class="day" id="sunday">
+                    <input type="checkbox" name="availability" value="sunday">
+                    <label>Monday</label><br>
+                    <div class="time_slots" style="display: none;">
+                        <input type="checkbox" name="time_slots" value="morning">
+                        <label>Morning</label><br>
+
+                        <input type="checkbox" name="time_slots" value="afternoon">
+                        <label>Afternoon</label><br>
+
+                        <input type="checkbox" name="time_slots" value="evening">
+                        <label>Evening</label><br>
+                    </div>
+                </div>
                     </div>
                     
                 </form>
@@ -219,7 +299,7 @@
                 <i class="fa-brands fa-twitter"></i> 
             </div>
         </div>
-
+<script src="script.js"></script>
     </footer>
 </body>
 </html>

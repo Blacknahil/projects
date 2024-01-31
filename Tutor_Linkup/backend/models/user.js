@@ -57,4 +57,4 @@ userSchema.methods.toJSON = function () {
 userSchema.plugin(passportLocalMongoose);
 const user = mongoose.model('user', userSchema);
 
-module.exports = User;
+module.exports = user;
