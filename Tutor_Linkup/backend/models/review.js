@@ -13,8 +13,14 @@ const reviewSchema = new Schema({
     },
     reviewer: {
         type: Schema.Types.ObjectId, 
-        ref: "tutor" 
+        ref: "User" ,
+        required: "true"
     },
+        reviewedTutor: {
+        type: Schema.Types.ObjectId,
+        ref: 'User',
+        required: true
+    },    
 });
 
 reviewSchema.virtual("url").get(function (){
