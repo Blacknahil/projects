@@ -2,25 +2,30 @@ const mongoose = require('mongoose');
 const Schema = mongoose.Schema;
 
 const studyGroupSchema = new Schema({
-    sender: { 
-        type: Schema.Types.ObjectId, 
-        ref: 'user', 
-        required: true 
-    },
-    conversationId: { 
+    sender: {
+        type: mongoose.Schema.Types.ObjectId,
+        ref: "User",
+        // required: true,
+      },
+      content: {
         type: String,
-        ref: 'conversation', 
-        required: true 
-    },
-    content: { 
-        type: String, 
-        required: true 
-    },
-    timestamp: { 
-        type: Date, 
-        default: Date.now 
-    },
-});
+        required: true,
+      },
+      groupName: {
+        type: String,
+        // required: true,
+      },
+      members: [
+        {
+          type: mongoose.Schema.Types.ObjectId,
+          ref: "User",
+        },
+      ],
+      createdAt: {
+        type: Date,
+        default: Date.now,
+      },
+    });
 
 const studyGroup = mongoose.model('studyGroup', studyGroupSchema);
 module.exports = studyGroup;

@@ -24,13 +24,13 @@ const createPost = async (req, res) => {
     // Extract post data from the request body
     const postData = {
       description: req.body.description,
-      fieldOfMentorship: req.body.fieldOfMentorship,
-      subjectsOffered: req.body.subjectsOffered,
-      duration: req.body.duration,
-      paymentRate: req.body.paymentRate,
-      genderPreference: req.body.genderPreference,
-      timePreference: req.body.timePreference,
-      location: req.body.location,
+      // fieldOfMentorship: req.body.fieldOfMentorship,
+      // subjectsOffered: req.body.subjectsOffered,
+      // duration: req.body.duration,
+      // paymentRate: req.body.paymentRate,
+      // genderPreference: req.body.genderPreference,
+      // timePreference: req.body.timePreference,
+      // location: req.body.location,
     };
 
     // Create a new post using the Post model

@@ -42,9 +42,9 @@ const searchPost = asyncHandler(async (req, res) => {
     const posts = await Post.find({
         $or: [
             { description: { $regex: searchTerm, $options: "i" } },
-            { fieldOfMentorship: { $regex: searchTerm, $options: "i" } },
-            { subjectsOffered: { $regex: searchTerm, $options: "i" } },
-            { duration: { $regex: searchTerm, $options: "i" } },
+            // { fieldOfMentorship: { $regex: searchTerm, $options: "i" } },
+            // { subjectsOffered: { $regex: searchTerm, $options: "i" } },
+            // { duration: { $regex: searchTerm, $options: "i" } },
             // Add more fields as needed
         ],
     });

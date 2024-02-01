@@ -5,7 +5,7 @@ const Schema = mongoose.Schema;
 const reviewSchema = new Schema({
     rating: {
         type: Number, 
-        required: true
+        // required: true
     },
     comment: {
         type: String, 
@@ -14,12 +14,12 @@ const reviewSchema = new Schema({
     reviewer: {
         type: Schema.Types.ObjectId, 
         ref: "User" ,
-        required: "true"
+        // required: "true"
     },
         reviewedTutor: {
         type: Schema.Types.ObjectId,
         ref: 'User',
-        required: true
+        // required: true
     },    
 });
 

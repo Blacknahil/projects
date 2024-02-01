@@ -5,27 +5,39 @@ const express = require("express");
 
 
 const editProfile = asyncHandler(async (req, res) => {
-    const userId = req.params.id; 
+    const userId = req.params.id;
     const user = await User.findById(userId);
-
+  
     if (!user) {
-        return res.status(404).json({ message: "User not found" });
+      return res.status(404).json({ message: "User not found" });
     }
+  
+    if (req.body) {
+      user.username = req.body.username || user.username;
+      user.email = req.body.email || user.email;
+      user.availability = req.body.availability || user.availability;
+      user.volunteerStatus = req.body.volunteerStatus || user.volunteerStatus;
+      user.gender = req.body.gender || user.gender;
+      user.paymentRange = req.body.paymentRange || user.paymentRange;
+      user.contactInformation = req.body.contactInformation || user.contactInformation;
+      user.experience = req.body.experience || user.experience;
+      user.password = req.body.password || user.password;
+      user.qualification = req.body.qualification || user.qualification;
+      user.university = req.body.university || user.university;
+      user.subjectsOffered = req.body.subjectsOffered || user.subjectsOffered;
+      user.fieldsOfMentorship = req.body.fieldsOfMentorship || user.fieldsOfMentorship;
+      user.address = req.body.address || user.address;
+
+
+      //address, field, availbility array, 
 
     
-
-    if (req.body && (req.body.username || req.body.email)) {
-        console.log("Yes there is input");
-        user.username = req.body.username || user.username;
-        user.email = req.body.email || user.email;
     }
-
+  
     await user.save();
-
-    // Log the user object after the update
-
+  
     res.json({ message: "User profile updated successfully", user });
-});
+  });
 
 
 
