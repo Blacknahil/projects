@@ -1,6 +1,5 @@
 const user = JSON.parse(localStorage.getItem('user'));
-const id=user._id;
-localStorage.setItem('id',id);
+const id=localStorage.getItem('id');
 // document.addEventListener('DOMContentLoaded', function() {
 //     fetch(`http://localhost:27017/user/${id}`)
 //     .then(response => response.json())
@@ -30,39 +29,44 @@ localStorage.setItem('id',id);
 //     });
 // });
 
-document.querySelectorAll('.day input[type="checkbox"]').forEach(checkbox=>{
-        checkbox.addEventListener('change',function(){
-            const timeSlots = this.parentNode.querySelector('.time_slots');
-            if (this.checked) {
-                console.log(timeSlots);
-                timeSlots.style.display='block';
-            }
-            else{
-                timeSlots.style.display='none';
-                const checkboxes=timeSlots.querySelectorAll('input[type="checkbox"]').forEach(checkbox=>{
-                if (checkboxes.length>0){
-                    checkboxes.forEach(checkbox=>{
-                        checkbox.checked=false;
-                    })
-                }
-            });
-        }
-        })
-    })
+// document.querySelectorAll('.day input[type="checkbox"]').forEach(checkbox=>{
+//         checkbox.addEventListener('change',function(){
+//             const timeSlots = this.parentNode.querySelector('.time_slots');
+//             if (this.checked) {
+//                 console.log(timeSlots);
+//                 timeSlots.style.display='block';
+//             }
+//             else{
+//                 timeSlots.style.display='none';
+//                 const checkboxes=timeSlots.querySelectorAll('input[type="checkbox"]').forEach(checkbox=>{
+//                 if (checkboxes.length>0){
+//                     checkboxes.forEach(checkbox=>{
+//                         checkbox.checked=false;
+//                     })
+//                 }
+//             });
+//         }
+//         })
+//     })
 
 
 
 
 document.addEventListener('DOMContentLoaded', function() {
+    document.querySelector('.cancelbtn').addEventListener('click',function(){
+        window.location.href="../../html,css,Js for registration and tutor profie/tutor profile/index.html";
+    });
 document.querySelector('.submitbtn').addEventListener('click', function(event) {
     event.preventDefault();
+    console.log("submitted");
+   
 
     const name = document.querySelector('input[name="name"]').value;
     const email = document.querySelector('input[name="email"]').value;
     const address = document.querySelector('input[name="address"]').value;
     const new_password = document.querySelector('input[name="new_password"]').value;
     const gender = document.querySelector('select[name="gender"]').value;
-    const phone = document.querySelector('input[name="phone"]').value;
+    const contactInformation = document.querySelector('input[name="phone"]').value;
     const qualification = document.querySelector('select[id="#qualification"]').value;
     const subjects=Array.from(document.querySelectorAll('input[name="subject"]:checked')).map(subject => subject.value);
     const fields= Array.from(document.querySelectorAll('input[name="field"]:checked')).map(field => field.value);
@@ -82,27 +86,45 @@ document.querySelector('.submitbtn').addEventListener('click', function(event) {
     const formData={
         username:name,
         email,
-        subjects,
+        subjectsOffered:subjects,
+        contactInformation,
 
         address,
         availability,
-        price,
-        fields,
+        paymentRange:price,
+        fieldsOfMentorship:fields,
         gender,
-        new_password,
-        phone,
+        // new_password,
+        contactInformation,
         bio,
         volunteer,
         qualification,
 
     }
 
-    fetch(`http://localhost:4078/user/${id}`, {
+    fetch(`http://localhost:4078/user/edit/${id}`, {
         method: 'PUT',
         headers: {
             'Content-Type': 'application/json'
         },
         body: JSON.stringify(formData),
     })
+    .then(response=>{
+        if(response.ok){
+            console.log('success');
+            window.location.href="../../html,css,Js for registration and tutor profie/tutor profile/index.html";
+        }
+        else{
+            console.log(response.statusText);
+            throw new Error("Request Failed")
+        }
+    })
+    .then(data=>{
+
+    })
+    .catch(error=>{
+        console.log("Error:",error)
+    })
 });
 });
+

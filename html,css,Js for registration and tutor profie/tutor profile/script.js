@@ -28,22 +28,129 @@ document.addEventListener('DOMContentLoaded', () => {
         const gender=user.gender;
         const paymentRange=user.paymentRange;
         const contactInformation=user.contactInformation;
+
         const experience=user.experience;
         const subjectsOffered=user.subjectsOffered;
         const fieldOfMentorship=user.fieldOfMentorship;
 
 
 
-        document.querySelector('#primary-tutor .profile-name').innerHTML = user.username;
-        if (user.bio){
-          document.querySelector('#primary-tutor .short-bio').innerHTML = user.bio;
+        document.querySelector('.profile-card-header .name').innerHTML = user.username;
+
+    // bio
+        if (bio){
+          document.querySelector('.bio-div .short-bio').innerHTML = bio;
+          console.log(bio);
         }
-        if(user.qualification){
-          document.querySelector('#primary-tutor .profile-college').innerHTML = user.qualification;
+        else{
+            document.querySelector('.bio-div').style.display="none";
         }
-        if(user.address){
-          document.querySelector('#primary-tutor .profile-address').innerHTML = user.address;
+
+// qualification
+        if (qualification){
+          document.querySelector('.qualification').innerHTML = qualification;
         }
+        else{
+            document.querySelector('.qualification-div').style.display="none";
+        }
+
+// address
+        if (address){
+            document.querySelector('.address').innerHTML = address;
+          }
+          else{
+              document.querySelector('.address-div').style.display="none";
+          }
+//university
+          if (university){
+            document.querySelector('.university').innerHTML = qualification;
+          }
+          else{
+              document.querySelector('.university-div').style.display="none";
+          }
+// avialabilty
+        if(availability){
+          container=document.querySelector('.availability-div');
+          availability.forEach(item=>{
+            const p=document.createElement('p')
+            p.textContent=item;
+            container.appendChild(item);
+          })
+
+        }
+        else{
+            document.querySelector('.availability-div').style.display='none';
+        }
+//volunterr
+        if (volunteerStatus){
+            document.querySelector('.volunteer').textContent = volunteerStatus;
+          }
+          else{
+              document.querySelector('.volunteer-div').style.display="none";
+          }
+//gender
+          if (gender){
+            document.querySelector('.gender').innerHTML = gender;
+          }
+          else{
+              document.querySelector('.gender-div').style.display="none";
+          }
+//price
+          if (paymentRange){
+            document.querySelector('.price').innerHTML = paymentRange;
+          }
+          else{
+              document.querySelector('.price-div').style.display="none";
+          }
+// contact
+          if (contactInformation){
+            document.querySelector('.contact').innerHTML = contactInformation;
+          }
+          else{
+              document.querySelector('.contact-div').style.display="none";
+          }
+// Experince 
+          if (experience){
+            document.querySelector('.experience').innerHTML = experience;
+          }
+          else{
+              document.querySelector('.experience-div').style.display="none";
+          }
+
+//subjects
+          if (subjectsOffered){
+            const container = document.querySelector('.subjects-div');
+            subjects.forEach(subject => {
+                const p = document.createElement('p');
+                p.textContent = subject;
+                p.className = 'subject'; // Add class to the paragraph
+                container.appendChild(p);
+            });
+            }
+          else{
+              document.querySelector('.subjects-div').style.display="none";
+          }
+
+          if(fieldOfMentorship){
+            const container = document.querySelector('.fields-div');
+            fieldOfMentorship.forEach(field => {
+                const p = document.createElement('p');
+                p.textContent = field;
+                p.className = 'field';
+                container.appendChild(p);
+            })
+          }
+
+          else{
+            document.querySelector(".fields-div").style.display='none';
+          }
+// 
+//
+
+//
+
+
+
   
       });
 

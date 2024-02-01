@@ -14,15 +14,24 @@ const editProfile = asyncHandler(async (req, res) => {
 
     
 
-    if (req.body && (req.body.username || req.body.email)) {
+    if (req.body){
         console.log("Yes there is input");
         user.username = req.body.username || user.username;
         user.email = req.body.email || user.email;
+        user.subjectsOffered = req.body.subjectsOffered || user.subjectsOffered;
+        user.contactInformation = req.body.contactInformation || user.contactInformation;
+        user.address = req.body.address || user.address;
+        user.availability = req.body.availability || user.availability;
+        user.paymentRange = req.body.paymentRange || user.paymentRange;
+        user.fieldsOfMentorship = req.body.fieldsOfMentorship || user.fieldsOfMentorship;
+        user.gender = req.body.gender || user.gender;
+        user.phone = req.body.phone || user.phone;
+        user.bio = req.body.bio || user.bio;
+        user.volunteer = req.body.volunteer || user.volunteer;
+        user.qualification = req.body.qualification || user.qualification;
     }
 
     await user.save();
-
-    // Log the user object after the update
 
     res.json({ message: "User profile updated successfully", user });
 });

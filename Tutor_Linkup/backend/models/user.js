@@ -41,7 +41,7 @@ const userSchema = new Schema({
     university: {
         type: String,
     },
-    volunteerStatus: {
+    volunteer: {
         type: String,
         // enum: ['volunteer', 'paid'],
 
@@ -63,11 +63,11 @@ const userSchema = new Schema({
 
     },
     subjectsOffered: {
-        type: String,
+        type: [String],
         enum: ['Math', 'English', 'Physics', 'Chemistry', 'Biology', 'General Science', 'SAT', 'History', 'Geography'],
     },
     fieldsOfMentorship: {
-        type: String,
+        type: [String],
         enum: ['Art', 'Music', 'Coding', 'Fashion Design', 'Literature', 'Agriculture', 'Public Speaking' ],
     },
 
