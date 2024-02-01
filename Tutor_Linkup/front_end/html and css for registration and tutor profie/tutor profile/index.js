@@ -1,8 +1,9 @@
 document.addEventListener('DOMContentLoaded', () => {
     // Fetch posts from the API
-    fetchPosts();
+    // fetchPosts();
 });
-
+fetchRating();
+displayReviews();
 async function fetchPosts() {
     try {
         const response = await fetch('http://localhost:4078/create-post');
@@ -49,3 +50,28 @@ postProperties.forEach(property => {
 
     return card;
 }
+
+function fetchRating(){
+    fetch("http://localhost:5501/review/rating").then((response)=>(response.json()).then((json)=> displayRating(json)))
+}
+
+function displayRating(rating) {
+    const card = document.getElementById('rating')
+    card.innerHTML= rating;
+}
+function displayReviews(){
+    fetch("http://localhost:5501/review/reviews").then((response)=>response.json()).then((json)=> renderReviews(json));
+}
+
+function renderReviews(reviews){
+    for (i of reviews){
+        const card = document.querySelector(".comment");
+        const clone = card.cloneNode(true);
+        clone.style.display = "block";
+        document.querySelector(".rating-section")?.appendChild(clone);
+        // clone.querySelector(".rating").innerHTML = i.rating;
+        clone.querySelector("#comments").innerHTML = i.comment;
+    };
+
+}
+ 

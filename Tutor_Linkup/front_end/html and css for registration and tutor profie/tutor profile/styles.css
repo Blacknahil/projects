@@ -69,6 +69,9 @@ nav a:hover::after{
     padding: 20px;
     margin-bottom: 200px;
 }
+.comment{
+    display:none;
+}
 .rating{
     margin-left: 20px;
 }
@@ -104,9 +107,6 @@ footer {
     margin-left: 10px;
     color: blue;
 }
-
-
-
 
 .cards-container {
     display: flex;
