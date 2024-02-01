@@ -14,15 +14,21 @@ const signUp = asyncHandler(async (req, res) => {
 const login = asyncHandler(async (req, res) => {
     const { email, password } = req.body;
     const existingUser = await user.findOne({ email });
+    console.log(existingUser);
     if (!existingUser) {
-        return res.status(401).json({ message: "Invalid email or password" });
+        return res.status(401).json({ message: "Invalid email" });
     }
     const isMatch = await bcrypt.compare(password, existingUser.password);
     if (!isMatch) {
-        return res.status(401).json({ message: "Invalid email or password" });
+        return res.status(401).json({ message: "Invalid password" });
     }
     const token = jwt.sign({ userId: existingUser._id }, 'YourSecretKey', { expiresIn: '1h' }); // Generate JWT token
-    res.json({ token });
+    const id=existingUser._id;
+    // lets exclude the password from the existing user and retur the user
+    existingUser.password = undefined;
+    const user=existingUser;
+    res.json({ token,id,user });
+    return res;
 });
 
 const changePassword = asyncHandler(async (req, res) => {

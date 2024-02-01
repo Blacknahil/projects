@@ -46,7 +46,7 @@ const { displayPosts, displaySinglePost } = require('./Tutor_Linkup/backend/cont
 
 app.get('/create-post', displayPosts);
 app.get('/single-post/:id', displaySinglePost);
-
+app.use('/auth',authRouter)
 app.use("/user", userRouter);
 app.use("/group", studyGroupRouter);
 app.use("/search", searchRouter);
