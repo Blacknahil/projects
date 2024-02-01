@@ -75,7 +75,10 @@ input {
     cursor: pointer;
     background-color: #05CB84; 
 }
-.upload{
+.uploadLogo{
+    font-weight: bold;
+}
+.uploadLicense{
     font-weight: bold;
 }
 footer {
