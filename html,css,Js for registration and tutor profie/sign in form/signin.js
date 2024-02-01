@@ -39,8 +39,10 @@ async function submitForm() {
     if (response.ok) {
         const result = await response.json();
         document.cookie = `authToken=${result.token}; expires=${new Date(Date.now() + 60 * 60 * 1000)}; path=/`;
-        localStorage.setItem('token', response.token);
+        localStorage.setItem('token', result.token);
         localStorage.setItem('user', JSON.stringify(result.user));
+        const id=result.user._id;
+        localStorage.setItem('id',id);
         const role = result.user.role;
         if (role === 'tutor/mentor') {
             window.location.href = '../../src/tutor home page/index.html';

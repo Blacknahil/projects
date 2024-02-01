@@ -30,6 +30,47 @@ const userSchema = new Schema({
         maxLength: [35, "Address can't be more than 35 characters"]
     },
     // Add other fields as needed
+    availability: {
+        type: []
+    },
+    
+    qualifications: {
+        type: String,
+
+    },
+    university: {
+        type: String,
+    },
+    volunteerStatus: {
+        type: String,
+        // enum: ['volunteer', 'paid'],
+
+    },
+    gender: {
+        type: String,
+        enum: ['male', 'female'],
+    },
+    paymentRange: {
+        type: String,
+    },
+    contanctInformation: {
+        type: String,
+
+    },
+    experience: {
+        type: String,
+        enum: ['< 1 year', '1-3 years', '3-7 years', '7+ years'],
+
+    },
+    subjectsOffered: {
+        type: String,
+        enum: ['Math', 'English', 'Physics', 'Chemistry', 'Biology', 'General Science', 'SAT', 'History', 'Geography'],
+    },
+    fieldsOfMentorship: {
+        type: String,
+        enum: ['Art', 'Music', 'Coding', 'Fashion Design', 'Literature', 'Agriculture', 'Public Speaking' ],
+    },
+
 }, {
     timestamps: true // Adds createdAt and updatedAt timestamps
 });

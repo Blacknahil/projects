@@ -1,32 +1,34 @@
-const id=localStorage.getItem('id');
-document.addEventListener('DOMContentLoaded', function() {
-    fetch(`http://localhost:4078/user/${id}`)
-    .then(response => response.json())
-    .then(data => {
-        document.querySelector('input[name="name"]').value=data.useranme;
-        document.querySelector('input[name="email"]').value=data.email;
-        document.querySelector('input[name="address"]').value=data.address;
-        document.querySelector('input[name="gender"]').value=data.gender;
-        document.querySelector('input[name="phone"]').value=data.phone;
-        document.querySelector('#qualification').value=data.qualification;
-        document.querySelector('#price').value=data.price;
-        document.querySelector('#bio').value=data.bio;
+const user = JSON.parse(localStorage.getItem('user'));
+const id=user._id;
+localStorage.setItem('id',id);
+// document.addEventListener('DOMContentLoaded', function() {
+//     fetch(`http://localhost:27017/user/${id}`)
+//     .then(response => response.json())
+//     .then(data => {
+//         document.querySelector('input[name="name"]').value=data.useranme;
+//         document.querySelector('input[name="email"]').value=data.email;
+//         document.querySelector('input[name="address"]').value=data.address;
+//         document.querySelector('input[name="gender"]').value=data.gender;
+//         document.querySelector('input[name="phone"]').value=data.phone;
+//         document.querySelector('#qualification').value=data.qualification;
+//         document.querySelector('#price').value=data.price;
+//         document.querySelector('#bio').value=data.bio;
 
-        const subjects = data.subjects;
-        subjects.array.forEach(subject => {
-            document.querySelector(`input[name="${subject}"]`).checked=true;
-        });
+//         const subjects = data.subjects;
+//         subjects.array.forEach(subject => {
+//             document.querySelector(`input[name="${subject}"]`).checked=true;
+//         });
 
-        const fields = data.fields;
-        fields.forEach(field => {
-            document.querySelector(`input[name="${field}"]`).checked=true;
-        });
-
-
+//         const fields = data.fields;
+//         fields.forEach(field => {
+//             document.querySelector(`input[name="${field}"]`).checked=true;
+//         });
 
 
-    });
-});
+
+
+//     });
+// });
 
 document.querySelectorAll('.day input[type="checkbox"]').forEach(checkbox=>{
         checkbox.addEventListener('change',function(){
