@@ -9,7 +9,7 @@ const studyGroupSchema = new Schema({
       },
       content: {
         type: String,
-        required: true,
+        // required: true,
       },
       groupName: {
         type: String,
@@ -17,7 +17,7 @@ const studyGroupSchema = new Schema({
       },
       members: [
         {
-          type: mongoose.Schema.Types.ObjectId,
+          type: String,
           ref: "User",
         },
       ],

@@ -26,3 +26,4 @@ router.get('/reviewPage', displayReviewPage);
 router.get('/rating', getRating);
 
 module.exports = router;
+

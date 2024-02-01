@@ -1,0 +1,180 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Study Group Page</title>
+  <link href="styles.css" rel="stylesheet">
+
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.3/css/all.min.css">
+
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:ital,wght@0,300;0,400;0,500;0,600;0,700;1,300;1,400;1,500;1,600;1,700&family=EB+Garamond:ital,wght@0,400..800;1,400..800&family=Montserrat:ital,wght@0,100..900;1,100..900&family=Nanum+Myeongjo&family=Playfair+Display:wght@500&display=swap" rel="stylesheet">
+
+  <script src="https://kit.fontawesome.com/f4c1e5f645.js" crossorigin="anonymous"></script>
+</head>
+<body>
+<header>
+    <div class="logo">
+        <img src="./Images/vector-F7y.png" alt="Logo"/>
+        <p>Tutor Linkup</p>
+    </div>
+    <nav class="nav-link">
+        <a href="#">Home</a>
+        <a href="#">Profile</a>
+        <a href="#">Log Out</a>
+    </nav>
+</header>
+
+<main>
+<!-- 
+    <section class="group-description" id="group-description" >
+
+        <div class="group-img">
+            <img src="./Images/study group.jpeg" alt="group photo">
+        </div> -->
+
+        <!-- <div class="other-group-info">
+            <h2 class="group-name" id="group-name"> Study Group</h2>
+            <p class="description" id="description"> Has maiorum habemus detraxit at. Timeam fabulas splendide et his.Usu nullam dolorum quaestio ei, 
+                sit vidit facilisis ea. Per ne impedit iracundia Lorem ipsum dolor sit amet consectetur adipisicing elit. Repudiandae, cum voluptas!
+                Dolor earum laborum maiores quae aspernatur? Sunt fugiat, doloremque quis 
+                sint inventore, veniam nemo voluptatibus natus, voluptatem quo beatae!
+            </p> -->
+            <!-- <div class="subjects" id="subjects">
+                <h4> Subjects :</h4>
+                <p>English</p>
+            </div>
+            <div class="grade">
+                <h4>Grade Level:</h4>
+                <p>12th</p>
+            </div> -->
+        <!-- </div> -->
+    <!-- </section>  -->
+
+    <!-- <section class="tutor-section">
+        <h2 class="tutor-text">Tutor</h2>
+        <div class="profile-card" id="primary-tutor">
+            <div class="profile-card-header">
+                <div class="profile-card-img">
+                    <img src="../../Images/person1.png" alt="Profile Picture">
+                </div>
+                <h3 class="profile-name">Name primary tutor</h3>
+            </div>
+            <p class="short-bio">Short Bio</p>
+            <div class="profile-footers">
+                <p class="profile-college">College</p>
+                <p class="profile-address">6 kilo, Arada</p>
+            </div>
+            <div class="go-to-profile">
+                <button id="profile-btn-primary" class="profile-btn">Go To Profile</button>
+            </div>
+        </div>
+    </section> -->
+
+    <!-- <section class="student-section">
+        <h2>Students</h2>
+        <div class="students-list">
+            <div class="student-card">
+                <div class="student-img">
+                    <img src="../../Images/person1.png" alt="student">
+                </div>
+                <div class="student-info">
+                    <h4 class="student-name">Beza</h4>
+                </div>
+            </div>
+
+            <div class="student-card">
+                <div class="student-img">
+                    <img src="../../Images/person1.png" alt="student">
+                </div>
+                <div class="student-info">
+                    <h4 class="student-name">Yordanos</h4>
+                </div>
+            </div>
+
+            <div class="student-card">
+                <div class="student-img">
+                    <img src="../../Images/person1.png" alt="student">
+                </div>
+                <div class="student-info">
+                    <h4 class="student-name">Samuel</h4>
+                </div>
+            </div>
+        </div>
+    </section> -->
+
+
+
+
+    <div class="other-group-info">
+        <h2 class="group-name" id="group-name"> Study Groups</h2>
+        <p class="description" id="description"></p>
+        <section class="student-section">
+          <!-- <h2>Students</h2> -->
+          <div class="students-list" id="students-list">
+            <!-- <div class="student-card"> -->
+                <!-- <div class="student-img">
+                    <img src="./Images/person1.png" alt="student">
+                </div> -->
+            <!-- </div> -->
+          </div>
+        </section>
+      </div>
+
+
+
+
+    <section class="buttons-section">
+        <button class="leave-btn" id="leave-btn">Leave</button>
+        <!-- <button class="join-request-btn" id="join-request-btn"> Request To Join</button>
+        <button class="invite-btn" id="invite-btn"> Create group</button> -->
+    </section>
+    <!-- searching to invite a new members -->
+
+    <section class="search-to-invite">
+
+    </section>
+
+    <div id="create-group" style="padding: 20px">
+        <form class="group">
+            <p style="font-weight: bold;"> Create New Group</p>
+
+            <label for="content">Group description:</label>
+            <input type="text" id="content" name="content" required>
+            
+            <label for="items">Members (separate by commas):</label>
+            <input type="text" id="items" name="items" required>
+            
+            <button class="leave-btn submit" type="submit">Submit</button>
+        </form>
+    </div>
+
+    <!-- <section class="chat-section">
+        <h2>Group Chat</h2>
+        <!-- Add your chat implementation using socket.io here -->
+    <!-- </section>  -->
+
+</main>
+
+<footer>
+    <div class="about-us">
+        <p>About Us</p>
+        <p>we believe students who want to learn and dive into the ocean of knowledge and parents who invest in their child’s future should be able to choose who suits them best in an open platform. we also believe university students can become financially able if we could find them job near their campuses.</p>
+    </div>
+
+    <div class="contact-us">
+        <div class="phone">
+            <p><i class="fa-solid fa-phone"></i> +1234567890</p>
+            <p><i class="fa-solid fa-phone"></i> +1234567890</p>
+        </div>
+        <div class="social-media">
+            <i class="fa-brands fa-facebook"></i>
+            <i class="fa-brands fa-twitter"></i> 
+        </div>
+    </div>
+</footer>
+<script src="script.js"></script>
+</body>
+</html>

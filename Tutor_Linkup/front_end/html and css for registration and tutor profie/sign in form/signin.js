@@ -25,7 +25,7 @@ async function submitForm() {
     const email = emailInput.value;
     const password = passwordInput.value;
 
-    const response = await fetch('http://localhost:4078/auth/login', {
+    const response = await fetch('http://localhost:5501/auth/login', {
         method: 'POST',
         headers: {
             'Content-Type': 'application/json',
@@ -46,6 +46,9 @@ async function submitForm() {
         document.cookie = `authToken=${result.token}; expires=${new Date(Date.now() + 60 * 60 * 1000)}; path=/`;
 
         // Redirect or handle other scenarios
+
+        window.location.href = '../tutor-home-page/index.html';
+
         errorMessage.textContent = ''; // Clear any previous error messages
     } else if (result.message && result.message === 'Invalid email or password') {
         // Display an error message in red

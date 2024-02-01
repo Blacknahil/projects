@@ -32,6 +32,8 @@ const createPost = async (req, res) => {
       // timePreference: req.body.timePreference,
       // location: req.body.location,
     };
+    
+    // console.log (postData)
 
     // Create a new post using the Post model
     const newPost = await Post.create(postData);

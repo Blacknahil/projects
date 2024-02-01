@@ -1,6 +1,6 @@
 document.addEventListener('DOMContentLoaded', () => {
     // Fetch posts from the API
-    // fetchPosts();
+    fetchPosts();
 });
 fetchRating();
 displayReviews();

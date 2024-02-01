@@ -1,0 +1,204 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Tutor Home Page</title>
+
+    <link rel="stylesheet" href="styles.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.3/css/all.min.css">
+
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:ital,wght@0,300;0,400;0,500;0,600;0,700;1,300;1,400;1,500;1,600;1,700&family=EB+Garamond:ital,wght@0,400..800;1,400..800&family=Montserrat:ital,wght@0,100..900;1,100..900&family=Nanum+Myeongjo&family=Playfair+Display:wght@500&display=swap" rel="stylesheet">
+
+    <script src="https://kit.fontawesome.com/f4c1e5f645.js" crossorigin="anonymous"></script>
+
+    <style>
+        .post-card {
+            border: 1px solid #ccc;
+            border-radius: 4px;
+            padding: 16px;
+            margin-left: auto;
+            margin-right: auto;
+            margin-bottom: 5%;
+            width: 60%;
+            font-weight:600;
+        }
+       
+    </style>
+
+</head>
+<body>
+    <header>
+        <div class="logo">
+        <img src="../../Images/vector-F7y.png" alt="Logo"/>
+        <p>Tutor Linkup</p>
+        </div>
+        <nav>
+        <!-- <a href="#">Home</a> -->
+        <a href="../home page/index.html">Home</a>
+        <a href="../tutor profile2/index.html">Profile</a>
+        <a href="../study group/index.html">Study Groups</a>
+        <a href="../sign in form/signin.html">Log Out</a>
+
+        </nav>
+    </header>
+
+    <main>
+        <div class ="body-header">
+            <div class="reccom-search-bar">
+            <div class="reccommedation">
+                <!-- <button id="recommedation-button">Reccommedation</button> -->
+            </div>
+            <div class="search-bar">
+                <!-- <input type="text" id="search-input" placeholder="Search a user..."> -->
+                <!-- <button id="search-button"><i class="fas fa-search"></i></button> -->
+              </div>
+            </div>
+
+        </div >
+
+
+        <div id="search-container">
+            <input type="text" id="search-input" placeholder="Search for a user...">
+            <button id="search-btn">Search</button>
+            <ul id="search-results" style="text-decoration: none; "></ul>
+          </div>
+
+
+            <!-- <div class="profile-card" id="primary-tutor" >
+
+                <div class="profile-card-header">
+                    <div class="profile-card-img">
+                    <img src="../../Images/person1.png" alt="Profile Picture">
+                    </div>
+                    <h3 class="profile-name">Name primary tutor</h3>
+                </div>
+
+                    <p class="short-bio">Short Bio</p>
+
+                    <div class="profile-footers">
+                    <p class="profile-college">College</p>
+                    <p class="profile-address">6 kilo,Arada</p>
+                    </div >
+                    <div class="go-to-profile">
+                        <button id="profile-btn-primary" class="profile-btn">Go To Profile</button>
+
+                    </div>
+                </div>
+                </div>
+        </div>
+
+                search results of the user information  other tutors-->
+                <!-- <div class="others-profiles" id="others-profiles">
+
+                
+                <div class="profile-card " >
+
+                    <div class="profile-card-header">
+                        <div class="profile-card-img">
+                        <img src="../../Images/person1.png" alt="Profile Picture">
+                        </div>
+                        <h3 class="profile-name">Name: other tutors</h3>
+                    </div>
+    
+                        <p class="short-bio">Short Bio</p>
+    
+                        <div class="profile-footers">
+                        <p class="profile-college">College</p>
+                        <p class="profile-address">6 kilo,Arada</p>
+                        </div >
+                        <div class="go-to-profile">
+                            <button class="profile-btn">Go To Profile</button>
+    
+                        </div>
+                    </div>
+
+                    <div class="profile-card " >
+
+                        <div class="profile-card-header">
+                            <div class="profile-card-img">
+                            <img src="../../Images/person1.png" alt="Profile Picture">
+                            </div>
+                            <h3 class="profile-name">Name</h3>
+                        </div>
+        
+                            <p class="short-bio">Short Bio</p>
+        
+                            <div class="profile-footers">
+                            <p class="profile-college">College</p>
+                            <p class="profile-address">6 kilo,Arada</p>
+                            </div >
+                            <div class="go-to-profile">
+                                <button class="profile-btn">Go To Profile</button>
+        
+                            </div>
+                        </div>
+                
+                    <div class="load-more">
+                        <button id="load-more-btn">Load More</button>
+                    </div>
+                </div> -->
+
+                    <!-- <div class="post-section">
+                        <h2 class="section-title">Posts</h2>
+                        <div class="latest-posts">
+                           Latest posts will be displayed here -->
+                          <!-- <div class="post">
+                            <div class="post-header">
+                              <div class="post-header-img">
+                                <img src="../../Images/person1.png" class="post-profile-image" alt="Profile Picture">
+                              </div>
+                              <div class="post-info">
+                                <h3 class="post-username">Abebe Kebede</h3>
+                                <p class="post-date">March 1, 2023</p>
+                              </div>
+                            </div>  -->
+
+
+                            <div class="post-form">
+                                <textarea id="post-input" placeholder="Write your post..." style="white-space: pre-wrap;" required></textarea>
+                                <i class="fas fa-paper-plane" id="post-btn"></i>
+                              </div>
+
+
+                            <div class="post-content"> </div>
+                                <!-- <p class="post-text"> Hello, I am currently Loking for A Tutor for My 5th  Grader child. Subjects are Mathematics and English. I also want a mentor for my child in grade 12. Price is Negotaiable. lets chat if you are interseted</p> -->
+
+                            </div>
+                            <div class="post-footer">
+                                <!-- <button class="view-post-profile-btn">View Profile</button> -->
+                            </div>
+                              
+                          </div>
+
+                        </div>
+
+                       
+
+                      </div>
+
+    </main>
+
+    <footer>
+        <div class="about-us">
+        <p>About Us</p>
+        <p>we believe students who want to learn and dive into the ocean of knowledge and parents who invest in their child’s future should be able to choose who suits them best in an open platform. we also believe university students can become financially able if we could find them job near their campuses.</p>
+        </div>
+
+        <div class="contact-us">
+            <div class="phone">
+                <p><i class="fa-solid fa-phone"></i> +1234567890</p>
+                <p><i class="fa-solid fa-phone"></i> +1234567890</p>
+            </div>
+            <div class="social-media">
+                <i class="fa-brands fa-facebook"></i>
+                <i class="fa-brands fa-twitter"></i> 
+            </div>
+        </div>
+
+    </footer>
+    <script src="script.js"></script>
+</body>
+</html>

@@ -6,7 +6,7 @@ const { getGroup, addGroupMember, createGroup, deleteGroup, leaveGroup } = requi
 
 // base route /group
 
-router.get('/get/:id', getGroup);
+router.get('/get', getGroup);
 router.put('/add/:id', addGroupMember);
 router.post('/create', createGroup);
 router.delete('/delete/:id', deleteGroup);
