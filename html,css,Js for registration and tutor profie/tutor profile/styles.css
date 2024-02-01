@@ -1,4 +1,4 @@
-body {
+/* body {
     margin: 0;
     padding: 0;
     font-family: 'Arial', sans-serif;
@@ -103,4 +103,158 @@ footer {
     font-size: 30px;
     margin-left: 10px;
     color: blue;
+} */
+
+
+body {
+    margin: 0;
+    padding: 0;
+    font-family: 'Arial', sans-serif;
 }
+
+header {
+    display: flex;
+    justify-content: space-between;
+    padding: 20px;
+    background-color: #f4f4f4;
+}
+
+.logo p {
+    font-size: 10px;
+    font-weight: bold;
+}
+.logo img{
+    width: 60px;
+}
+
+nav {
+    display: flex;
+    gap: 20px;
+}
+nav a{
+    text-decoration: none;
+    color: black;
+}
+nav a::after{
+    content: '';
+    width: 0;
+    height: 2px;
+    background: blue;
+    display: block;
+    margin: auto;
+    transition: 0.3s
+}
+nav a:hover::after{
+    width: 100%;
+}
+
+.profile-section {
+    display: flex;
+    justify-content: space-between;
+    padding: 20px;
+}
+.profile-info {
+    display: flex;
+    justify-content: space-between;
+}
+.profile-info img {
+    border-radius: 50%;
+    height: 70px;
+}
+
+.text-info {
+    margin-left: 20px;
+}
+
+.bio {
+    margin-top: 20px;
+    margin-left: 40px;
+}
+
+.rating-section {
+    display: flex;
+    justify-content: space-between;
+    padding: 20px;
+    margin-bottom: 200px;
+}
+.comment{
+    display:none;
+}
+.rating{
+    margin-left: 20px;
+}
+.reviews{
+    margin-right: 20px;
+}
+
+footer {
+    display: flex;
+    justify-content: space-between;
+    padding: 20px;
+    background-color: lightgray;
+    margin-top: 100px;
+}
+
+.about-us p {
+    font-weight: 200;
+    margin-left: 20px;
+}
+.phone{
+    margin-right: 30px;
+}
+
+.phone p {
+    display: flex;
+    align-items: center;
+}
+
+.social-media {
+    display: flex;
+    gap: 20px;
+    font-size: 30px;
+    margin-left: 10px;
+    color: blue;
+}
+
+.cards-container {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: space-around;
+}
+
+.post-card {
+    background-color: white;
+    border: 2px solid green;
+    border-radius: 10px;
+    padding: 10px;
+    margin: 10px;
+    width: calc(30% - 20px);
+    box-shadow: 0px 4px 8px rgba(0, 0, 0, 0.1);
+}
+
+
+button{
+    border-radius:5px;
+    background-color: #1a73e8;
+    color: white;
+    padding: 10px 20px;
+    border: none;
+    font-size: 15px;
+    cursor: pointer;
+    margin:0 auto;
+    width:200px;
+
+
+  
+  }
+button:hover{
+    background-color: #0d47a1;
+  }
+  .edit-profile {
+    display: flex;
+    justify-content: center;
+    text-align: center;
+    margin-top: 20px;
+    
+}
+

@@ -1,9 +1,8 @@
-
 const mongoose = require('mongoose');
 require('dotenv').config();
 
-
-const db = "mongodb+srv://yordanos:12345@cluster1.isdg4lt.mongodb.net/?retryWrites=true&w=majority";
+// Replace with your local MongoDB URI
+const db = "mongodb://localhost:27017/tutor";
 
 // Log the MongoDB URI for debugging purposes
 console.log("MongoDB URI:", db);
@@ -11,7 +10,7 @@ console.log("MongoDB URI:", db);
 const connectDB = async () => {
   try {
     await mongoose.connect(db);
-    console.log('MongoDB is Connected...');
+    console.log(`MongoDB is Connected...on port${db}`);
   } catch (err) {
     console.error('Error connecting to MongoDB:', err.message);
     process.exit(1);

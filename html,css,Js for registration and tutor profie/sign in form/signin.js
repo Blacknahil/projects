@@ -35,31 +35,28 @@ async function submitForm() {
             password,
         }),
     });
-    if (response.headers.get('Content-Type').includes('application/json')) {
-        const result = await response.json();
-        console.log(result);
-    } else {
-        console.error('Server did not return JSON. The response was:', await response.text());
-    }
-    console.log(response)
-    const result = await response.json();
-    console.log(result); // Log the response from the server
-
     const errorMessage = document.getElementById('error-message');
-
-    if (result.token) {
-        // Store the token in a cookie with a one-hour expiration
+    if (response.ok) {
+        const result = await response.json();
         document.cookie = `authToken=${result.token}; expires=${new Date(Date.now() + 60 * 60 * 1000)}; path=/`;
+        localStorage.setItem('token', response.token);
+        localStorage.setItem('user', JSON.stringify(result.user));
+        const role = result.user.role;
+        if (role === 'tutor/mentor') {
+            window.location.href = '../../src/tutor home page/index.html';
+        } else if (role === 'parent/student') {
 
-        // Redirect or handle other scenarios
-        errorMessage.textContent = ''; // Clear any previous error messages
-    } else if (result.message && result.message === 'Invalid email or password') {
-        // Display an error message in red
-        errorMessage.textContent = 'Invalid email or password';
-        errorMessage.style.color = 'red';
+            window.location.href = '../../Agency_And_Student/Student_Home/Student_home.html';
+        }
+        else{
+            window.location.href = '../../Agency_And_Student/Agency_Home/Agency_home.html';
+        }
     } else {
-        // Handle other scenarios or navigate to a success page
-        errorMessage.textContent = ''; // Clear any previous error messages
+        alert(response.status);
+        console.log(response.statusText);
+         // Display an error message in red
+         ///Users/nahom/Documents/GitHub/projects/src/tutor home page/index.html
+
     }
 }
 
